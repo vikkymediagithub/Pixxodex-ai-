@@ -42,3 +42,46 @@ const words = ["FAST & HIGHLY SECURE", "CRYPTO LOANS & MORE", "BORDERLESS EXCHAN
   closeMenu.addEventListener('click', () => {
     mobileMenu.classList.remove('show'); // Hide the menu
   });
+
+
+ // FAQ Toggle Functionality
+document.querySelectorAll('.faq-header').forEach((header) => {
+    header.addEventListener('click', () => {
+        const targetId = header.getAttribute('data-target');
+        const content = document.querySelector(targetId);
+
+        // Toggle content visibility
+        if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
+            content.classList.add('block');
+        } else {
+            content.classList.add('hidden');
+            content.classList.remove('block');
+        }
+
+        // Toggle arrow icon direction
+        const icon = header.querySelector('i');
+        if (icon.classList.contains('fa-angle-down')) {
+            icon.classList.remove('fa-angle-down');
+            icon.classList.add('fa-angle-up');
+        } else {
+            icon.classList.remove('fa-angle-up');
+            icon.classList.add('fa-angle-down');
+        }
+    });
+});
+
+
+// Initialize Bootstrap carousel
+const carousel = new bootstrap.Carousel(document.getElementById('carouselExampleIndicators'), {
+    interval: 5000,  // Auto slide every 5 seconds
+    ride: 'carousel' // Enable the automatic sliding
+});
+
+// Optional: Pause carousel on hover (for mobile)
+document.getElementById('carouselExampleIndicators').addEventListener('mouseenter', function () {
+    carousel.pause();
+});
+document.getElementById('carouselExampleIndicators').addEventListener('mouseleave', function () {
+    carousel.cycle();
+});

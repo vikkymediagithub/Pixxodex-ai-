@@ -12,12 +12,20 @@
   <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
+  <!-- Add Bootstrap CSS (if not included already) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Add Bootstrap JS and required Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+
 </head>
 <body class="bg-black text-white">
 
   <!-- Loader -->
   <div id="loader" class="loader-wrapper fixed inset-0 bg-black flex items-center justify-center z-50">
-    <div class="loader"></div> <!-- Update this with your actual loader animation -->
+    <div class="loader"></div> 
   </div>
 
   <!-- Navbar -->
@@ -85,311 +93,526 @@
     </div>
   </div>
 
-<!-- Parent Wrapper with Video Background -->
-<div class="relative">
-    <!-- Background Video -->
-    <video autoplay loop muted class="absolute inset-0 w-full h-full object-cover z-0">
-        <source src="/assets/animate-bg/WhatsApp Video 2024-12-16 at 1.28.59 AM.mp4" type="video/mp4">
-    </video>
+     <!-- Parent Wrapper with Video Background -->
+    <div class="relative">
+        <!-- Background Video -->
+        <video autoplay loop muted class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="/assets/animate-bg/WhatsApp Video 2024-12-16 at 1.28.59 AM.mp4" type="video/mp4">
+        </video>
 
-    <!-- Content Sections -->
-    <div class="relative z-10 py-8 text-white">
-        <!-- Section 1 (Content-1) -->
-        <div class="container mx-auto pt-8 mt-12 text-center">
-            <div class="flex flex-col items-center space-y-8">
-                <!-- Animated Text Section -->
-                <div class="flex items-center justify-center space-x-2">
-                    <box-icon name="chevrons-right" type="solid" class="text-gray-400 text-xl md:text-2xl"></box-icon>
+        <!-- Content Sections -->
+        <div class="relative z-10 py-8 text-white">
+            <!-- Section 1 (Content-1) -->
+            <div class="container mx-auto pt-8 mt-12 text-center">
+                <div class="flex flex-col items-center space-y-8">
+                    <!-- Animated Text Section -->
+                    <div class="flex items-center justify-center space-x-2">
+                        <box-icon name="chevrons-right" type="solid" class="text-gray-400 text-xl md:text-2xl"></box-icon>
 
-                    <!-- Separator line -->
-                    <div class="w-6 h-[3px] bg-gray-400 rounded"></div>
+                        <!-- Separator line -->
+                        <div class="w-6 h-[3px] bg-gray-400 rounded"></div>
 
-                    <!-- Chevron Icon (downward) for symmetry -->
-                    <box-icon name="chevrons-right" type="solid" class="text-gray-400 text-xl md:text-2xl rotate-180"></box-icon>
+                        <!-- Chevron Icon (downward) for symmetry -->
+                        <box-icon name="chevrons-right" type="solid" class="text-gray-400 text-xl md:text-2xl rotate-180"></box-icon>
 
-                    <!-- Animated Text -->
-                    <span 
-                        id="flip-word" 
-                        class="ml-2 text-gray-400 text-sm sm:text-lg md:text-xl font-semibold transition-all duration-1000 ease-in-out opacity-100">
-                        BORDERLESS EXCHANGE
-                    </span>
+                        <!-- Animated Text -->
+                        <span 
+                            id="flip-word" 
+                            class="ml-2 text-gray-400 text-sm sm:text-lg md:text-xl font-semibold transition-all duration-1000 ease-in-out opacity-100">
+                            BORDERLESS EXCHANGE
+                        </span>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1 
+                        class="text-3xl md:text-5xl font-bold overflow-hidden relative"
+                        data-aos="fade-up"
+                        data-aos-duration="500"
+                    >
+                        PixxoDex Crypto Exchange Solutions
+                    </h1>
+
+                    <!-- Buttons (Desktop) -->
+                    <div class="hidden lg:flex justify-center space-x-4 mt-8">
+                        <a href="escrow/create-trade">
+                            <button class="mt-4 py-3 px-8 bg-green-600 text-white rounded-full hover:bg-green-500 transition-all duration-300">EXCHANGE NOW</button>
+                        </a>
+
+                        <a href="about/index.html">
+                            <button class="mt-4 py-3 px-8 bg-white text-black rounded-full hover:bg-gray-100 transition-all duration-300">LEARN</button>
+                        </a>
+                    </div>
+
+                    <!-- Buttons (Mobile) -->
+                    <div class="lg:hidden grid grid-cols-2 gap-4 mt-8">
+                        <a href="escrow/create-trade">
+                            <button class="py-3 px-8 bg-green-600 text-white rounded-full hover:bg-green-500 transition-all duration-300 w-full">EXCHANGE NOW</button>
+                        </a>
+                        <a href="about/index.html">
+                            <button class="py-3 px-8 bg-white text-black rounded-full hover:bg-gray-100 transition-all duration-300 w-full">LEARN</button>
+                        </a>
+                    </div>
                 </div>
+            </div>
 
-                <!-- Main Heading -->
-                <h1 
-                    class="text-3xl md:text-5xl font-bold overflow-hidden relative"
-                    data-aos="fade-up"
-                    data-aos-duration="500"
-                >
-                    PixxoDex Crypto Exchange Solutions
-                </h1>
+            <!-- Section 2 (Content Section 2) -->
+            <div class="container mx-auto pb-8 px-4 mt-16">
+                <div class="rounded-2xl overflow-hidden shadow-lg bg-gray-800 bg-opacity-70 max-w-4xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <!-- Text Section -->
+                        <div class="p-6">
+                            <h4 class="text-center md:text-left text-lg md:text-xl text-gray-100 leading-relaxed">
+                                We've developed a comprehensive ecosystem to cater to all your cryptocurrency requirements. From OTC
+                                exchanges and decentralized finance (DeFi) swaps to crypto loans, our seamless management ensures a smooth experience for all your crypto needs.
+                            </h4>
+                        </div>
 
-                <!-- Buttons (Desktop) -->
-                <div class="hidden lg:flex justify-center space-x-4 mt-8">
-                    <a href="escrow/create-trade">
-                        <button class="mt-4 py-3 px-8 bg-green-600 text-white rounded-full hover:bg-green-500 transition-all duration-300">EXCHANGE NOW</button>
-                    </a>
-
-                    <a href="about/index.html">
-                        <button class="mt-4 py-3 px-8 bg-white text-black rounded-full hover:bg-gray-100 transition-all duration-300">LEARN</button>
-                    </a>
-                </div>
-
-                <!-- Buttons (Mobile) -->
-                <div class="lg:hidden grid grid-cols-2 gap-4 mt-8">
-                    <a href="escrow/create-trade">
-                        <button class="py-3 px-8 bg-green-600 text-white rounded-full hover:bg-green-500 transition-all duration-300 w-full">EXCHANGE NOW</button>
-                    </a>
-                    <a href="about/index.html">
-                        <button class="py-3 px-8 bg-white text-black rounded-full hover:bg-gray-100 transition-all duration-300 w-full">LEARN</button>
-                    </a>
+                        <!-- Image Section -->
+                        <div class="flex justify-center md:justify-end p-4">
+                            <img 
+                                src="./assets/pixodex-ui-show.png" 
+                                alt="Pixodex UI Preview" 
+                                class="w-full max-w-md md:max-w-lg h-auto object-contain rounded-lg shadow-md"
+                            >
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Section 2 (Content Section 2) -->
-        <div class="container mx-auto pb-8 px-4 mt-16">
-            <div class="rounded-2xl overflow-hidden shadow-lg bg-gray-800 bg-opacity-70 max-w-4xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                    <!-- Text Section -->
-                    <div class="p-6">
-                        <h4 class="text-center md:text-left text-lg md:text-xl text-gray-100 leading-relaxed">
-                            We've developed a comprehensive ecosystem to cater to all your cryptocurrency requirements. From OTC
-                            exchanges and decentralized finance (DeFi) swaps to crypto loans, our seamless management ensures a smooth experience for all your crypto needs.
-                        </h4>
+
+    <div class="bg-black py-12">
+    <div class="container mx-auto px-6 md:px-10 text-center text-white">
+    <!-- Title Section -->
+    <div data-aos="fade-up" data-aos-duration="400" class="mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">How Pixxodex Crypto Exchange Works</h1>
+        <h5 class="text-gray-400 text-lg md:text-xl">
+            Complete your exchange securely within minutes with a simplified exchange routine.
+        </h5>
+    </div>
+
+    <!-- Steps Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+        <!-- Step 1 -->
+        <div class="bg-gray-800 rounded-xl p-6 shadow-lg flex flex-col items-center text-center">
+            <!-- Icon -->
+            <i class="fas fa-check-square text-blue-500 text-4xl mb-4 bg-gray-900 p-3 rounded-full"></i>
+            <!-- Title -->
+            <h5 class="text-xl font-semibold mb-3">Create/Join an Order</h5>
+            <!-- Description -->
+            <p class="text-gray-400">
+                Create an order on Pixxodex by selecting the desired exchange assets. Or join an already created order with the exchange ID.
+            </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-gray-800 rounded-xl p-6 shadow-lg flex flex-col items-center text-center">
+            <!-- Icon -->
+            <i class="fas fa-credit-card text-blue-500 text-4xl mb-4 bg-gray-900 p-3 rounded-full"></i>
+            <!-- Title -->
+            <h5 class="text-xl font-semibold mb-3">Pay for Exchange</h5>
+            <!-- Description -->
+            <p class="text-gray-400">
+                Initiate your exchange by submitting the desired asset along with the corresponding fees.
+            </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-gray-800 rounded-xl p-6 shadow-lg flex flex-col items-center text-center">
+            <!-- Icon -->
+            <i class="fab fa-bitcoin text-blue-500 text-4xl mb-4 bg-gray-900 p-3 rounded-full"></i>
+            <!-- Title -->
+            <h5 class="text-xl font-semibold mb-3">Receive Your Crypto</h5>
+            <!-- Description -->
+            <p class="text-gray-400">
+                The asset you exchanged for will be automatically sent to your Pixxodex wallet. Instantly withdraw your asset to your preferred crypto address.
+            </p>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+
+    <div class="py-12">
+        <div class="container mx-auto px-6 md:px-10 text-center text-white">
+            <!-- Title Section (no background color) -->
+            <div data-aos="fade-up" data-aos-duration="400" class="mb-8">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">Custom-designed to meet your needs</h1>
+                <div class="text-lg text-gray-400">
+                    Complete your exchange securely within minutes with a simplified exchange routine.
+                </div>
+            </div>
+
+            <!-- Content Section with Background -->
+            <div class="bg-gray-800 p-6 lg:p-8 rounded-lg">
+                <!-- Row for steps -->
+                <div class="flex flex-wrap justify-center gap-8">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center max-w-xs">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gray-700 p-3 rounded-full mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" fill="none">
+                                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.75 9.25 14 13 8.75m-3-7.036a11.96 11.96 0 0 1-8.402 3.285A12 12 0 0 0 1 8.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152C15.054 5 12.15 3.75 10 1.715"></path>
+                                </svg>
+                            </div>
+                            <h5 class="text-xl font-semibold">Assured Security</h5>
+                        </div>
+                        <p class="text-gray-400 mt-2">
+                            To prevent disagreements between traders, we handle trades using automated procedures and multi-signature transaction processes.
+                        </p>
                     </div>
 
-                    <!-- Image Section -->
-                    <div class="flex justify-center md:justify-end p-4">
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center max-w-xs">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gray-700 p-3 rounded-full mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+                                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m18.75 5.25-13.5 13.5M6.75 9a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5M17.25 19.5a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5"></path>
+                                </svg>
+                            </div>
+                            <h5 class="text-xl font-semibold">Low Fees</h5>
+                        </div>
+                        <p class="text-gray-400 mt-2">
+                            We offer very low exchange fees. Completely flexible rates to allow smooth transaction between trade parties.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center max-w-xs">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gray-700 p-3 rounded-full mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+                                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 14.5h3.75A2.25 2.25 0 0 0 21 12.25v-6A2.25 2.25 0 0 0 18.75 4H5.25A2.25 2.25 0 0 0 3 6.25v6a2.25 2.25 0 0 0 2.25 2.25H9m0 3 3 3m0 0 3-3m-3 3V7.75"></path>
+                                </svg>
+                            </div>
+                            <h5 class="text-xl font-semibold">Instant Withdrawals</h5>
+                        </div>
+                        <p class="text-gray-400 mt-2">
+                            To make sure you take full advantage of the cryptocurrency market, we offer a respectable transaction speed. Make mass payouts to any wallet address(es) in just one moment.
+                        </p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex flex-col items-center max-w-xs">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gray-700 p-3 rounded-full mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" fill="none">
+                                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.25 6.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193q-.51.041-1.02.072v3.091l-3-3q-2.031 0-4.02-.163a2.1 2.1 0 0 1-.825-.242m9.345-8.334a2 2 0 0 0-.476-.095 48.6 48.6 0 0 0-8.048 0C9.595 6.51 8.75 7.473 8.75 8.608v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V4.637c0-1.621-1.152-3.026-2.76-3.235A48.5 48.5 0 0 0 10.25 1c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235q.865.113 1.74.194V19l4.155-4.155"></path>
+                                </svg>
+                            </div>
+                            <h5 class="text-xl font-semibold">Support Team</h5>
+                        </div>
+                        <p class="text-gray-400 mt-2">
+                            The support team, that is available in Telegram, by email, right on our website in the form of tickets or as a personal manager for our merchants, is always there to solve issues and answer your customers' questions instantly.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Button aligned to the left with different background color -->
+                <div class="col-12 mt-4 flex justify-start">
+                    <button class="bg-blue-500 text-white font-semibold py-3 px-5 rounded-lg hover:bg-blue-400 transition-all duration-300">PERFORM AN EXCHANGE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="bg-white py-10">
+        <div class="container mx-auto px-4 lg:px-6">
+            <!-- Title Section -->
+            <div data-aos="fade-up" data-aos-duration="400" class="text-center lg:text-left">
+                <h1 class="text-3xl md:text-4xl font-bold text-black">
+                    Get instant crypto loans
+                </h1>
+            </div>
+
+            <!-- Content Section -->
+            <div class="bg-gray-100 p-6 mt-6 rounded-lg">
+                <div class="flex flex-wrap lg:flex-nowrap gap-8">
+                    <!-- Left Column (Text Section) -->
+                    <div class="w-full lg:w-5/12">
+                        <div class="p-4">
+                            <h3 class="text-xl md:text-2xl font-semibold text-black">
+                                Secure a USDT loan by depositing your cryptocurrency as collateral
+                            </h3>
+
+                            <!-- Feature List -->
+                            <div class="mt-6 space-y-4">
+                                <!-- Feature 1 -->
+                                <div class="flex items-start">
+                                    <i class="fa fa-circle text-blue-500 mt-1" style="font-size: 10px;"></i>
+                                    <p class="ml-3 text-black text-base">
+                                        Deposit an accepted cryptocurrency and receive USDT instantly.
+                                    </p>
+                                </div>
+
+                                <!-- Feature 2 -->
+                                <div class="flex items-start">
+                                    <i class="fa fa-circle text-blue-500 mt-1" style="font-size: 10px;"></i>
+                                    <p class="ml-3 text-black text-base">
+                                        Close your loan at any time - after a few hours, in a month or a year later.
+                                    </p>
+                                </div>
+
+                                <!-- Feature 3 -->
+                                <div class="flex items-start">
+                                    <i class="fa fa-circle text-blue-500 mt-1" style="font-size: 10px;"></i>
+                                    <p class="ml-3 text-black text-base">
+                                        Our loan fees are competitively low, with a fixed Loan-to-Value ratio of 50%. The better your performance score in loan activities, the lower the interest fees.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column (Image Section) -->
+                    <div class="w-full lg:w-7/12">
                         <img 
-                            src="./assets/pixodex-ui-show.png" 
-                            alt="Pixodex UI Preview" 
-                            class="w-full max-w-md md:max-w-lg h-auto object-contain rounded-lg shadow-md"
+                            src="./assets/loan-show.png" 
+                            alt="Crypto Loan" 
+                            class="w-full h-auto rounded-lg object-cover"
                         >
                     </div>
                 </div>
+
+                <!-- Button Section -->
+                <div class="mt-6 text-center lg:text-left">
+                    <a href="crypto-loan/index.html">
+                        <button class="px-6 py-3 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-all duration-300">
+                            START NEW LOAN
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 
 
-<div class="bg-black py-12">
-    <div class="container mx-auto px-6 md:px-10 text-center text-white">
-        <!-- Title Section -->
-        <div data-aos="fade-up" data-aos-duration="400" class="mb-8">
-            <h1 class="text-3xl md:text-4xl font-bold mb-4">How Pixxodex Crypto Exchange Works</h1>
-            <h5 class="text-gray-400 text-lg md:text-xl">
-                Complete your exchange securely within minutes with a simplified exchange routine.
-            </h5>
-        </div>
-
-        <!-- Steps Section -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-            <!-- Step 1 -->
-            <div class="bg-gray-800 rounded-xl p-6 shadow-lg flex flex-col items-center text-center">
-                <!-- Icon -->
-                <i class="fas fa-check-square text-blue-500 text-4xl mb-4 bg-gray-900 p-3 rounded-full"></i>
-                <!-- Title -->
-                <h5 class="text-xl font-semibold mb-3">Create/Join an Order</h5>
-                <!-- Description -->
-                <p class="text-gray-400">
-                    Create an order on Pixxodex by selecting the desired exchange assets. Or join an already created order with the exchange ID.
-                </p>
+    <div class="relative bg-black py-10">
+        <!-- Background Images -->
+        <img src="./assets/bg_main.41132318.png" 
+             alt="Background" 
+             class="hidden lg:block absolute top-8 left-1/2 transform -translate-x-1/2 opacity-50 w-3/5 h-96">
+        <img src="./assets/bg_main.41132318.png" 
+             alt="Background Mobile" 
+             class="block lg:hidden absolute top-10 left-1/2 transform -translate-x-1/2 opacity-50 w-4/5 h-48">
+    
+        <!-- Main Content -->
+        <div class="container mx-auto px-4 relative">
+            <!-- Header Section -->
+            <div class="text-center">
+                <h1 class="text-3xl md:text-5xl font-extrabold text-white">
+                    Join our crypto community
+                </h1>
+                <h5 class="text-lg md:text-xl text-gray-300 mt-4 font-semibold">
+                    More than twenty thousand crypto enthusiasts around the world have accessed our custom-tailored 
+                    ecosystem for unmatched services.
+                </h5>
             </div>
-
-            <!-- Step 2 -->
-            <div class="bg-gray-800 rounded-xl p-6 shadow-lg flex flex-col items-center text-center">
-                <!-- Icon -->
-                <i class="fas fa-credit-card text-blue-500 text-4xl mb-4 bg-gray-900 p-3 rounded-full"></i>
-                <!-- Title -->
-                <h5 class="text-xl font-semibold mb-3">Pay for Exchange</h5>
-                <!-- Description -->
-                <p class="text-gray-400">
-                    Initiate your exchange by submitting the desired asset along with the corresponding fees.
-                </p>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="bg-gray-800 rounded-xl p-6 shadow-lg flex flex-col items-center text-center">
-                <!-- Icon -->
-                <i class="fab fa-bitcoin text-blue-500 text-4xl mb-4 bg-gray-900 p-3 rounded-full"></i>
-                <!-- Title -->
-                <h5 class="text-xl font-semibold mb-3">Receive Your Crypto</h5>
-                <!-- Description -->
-                <p class="text-gray-400">
-                    The asset you exchanged for will be automatically sent to your Pixxodex wallet. Instantly withdraw your asset to your preferred crypto address.
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<div class="py-12">
-    <div class="container mx-auto px-6 md:px-10 text-center text-white">
-        <!-- Title Section (no background color) -->
-        <div data-aos="fade-up" data-aos-duration="400" class="mb-8">
-            <h1 class="text-3xl md:text-4xl font-bold mb-4">Custom-designed to meet your needs</h1>
-            <div class="text-lg text-gray-400">
-                Complete your exchange securely within minutes with a simplified exchange routine.
-            </div>
-        </div>
-
-        <!-- Content Section with Background -->
-        <div class="bg-gray-800 p-6 lg:p-8 rounded-lg">
-            <!-- Row for steps -->
-            <div class="flex flex-wrap justify-center gap-8">
-                <!-- Step 1 -->
-                <div class="flex flex-col items-center max-w-xs">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-gray-700 p-3 rounded-full mr-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" fill="none">
-                                <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.75 9.25 14 13 8.75m-3-7.036a11.96 11.96 0 0 1-8.402 3.285A12 12 0 0 0 1 8.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152C15.054 5 12.15 3.75 10 1.715"></path>
-                            </svg>
-                        </div>
-                        <h5 class="text-xl font-semibold">Assured Security</h5>
-                    </div>
-                    <p class="text-gray-400 mt-2">
-                        To prevent disagreements between traders, we handle trades using automated procedures and multi-signature transaction processes.
-                    </p>
+    
+            <!-- Stats Section -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10" data-aos="fade-up" data-aos-duration="400">
+                <!-- Stat 1 -->
+                <div class="text-center">
+                    <p class="text-gray-400 text-sm md:text-lg mb-2 font-medium">Supported Assets</p>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white">
+                        <span class="hidden lg:inline">70+</span>
+                        <span class="lg:hidden">700+</span>
+                    </h1>
                 </div>
-
-                <!-- Step 2 -->
-                <div class="flex flex-col items-center max-w-xs">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-gray-700 p-3 rounded-full mr-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
-                                <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m18.75 5.25-13.5 13.5M6.75 9a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5M17.25 19.5a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5"></path>
-                            </svg>
-                        </div>
-                        <h5 class="text-xl font-semibold">Low Fees</h5>
-                    </div>
-                    <p class="text-gray-400 mt-2">
-                        We offer very low exchange fees. Completely flexible rates to allow smooth transaction between trade parties.
-                    </p>
+    
+                <!-- Stat 2 -->
+                <div class="text-center">
+                    <p class="text-gray-400 text-sm md:text-lg mb-2 font-medium">24Hr. Trade Volume</p>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white">
+                        <span class="hidden lg:inline">21,000</span>
+                        <span class="lg:hidden">21,500</span>
+                    </h1>
                 </div>
-
-                <!-- Step 3 -->
-                <div class="flex flex-col items-center max-w-xs">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-gray-700 p-3 rounded-full mr-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
-                                <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 14.5h3.75A2.25 2.25 0 0 0 21 12.25v-6A2.25 2.25 0 0 0 18.75 4H5.25A2.25 2.25 0 0 0 3 6.25v6a2.25 2.25 0 0 0 2.25 2.25H9m0 3 3 3m0 0 3-3m-3 3V7.75"></path>
-                            </svg>
-                        </div>
-                        <h5 class="text-xl font-semibold">Instant Withdrawals</h5>
-                    </div>
-                    <p class="text-gray-400 mt-2">
-                        To make sure you take full advantage of the cryptocurrency market, we offer a respectable transaction speed. Make mass payouts to any wallet address(es) in just one moment.
-                    </p>
+    
+                <!-- Stat 3 -->
+                <div class="text-center">
+                    <p class="text-gray-400 text-sm md:text-lg mb-2 font-medium">Active Users</p>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white">15,000+</h1>
                 </div>
-
-                <!-- Step 4 -->
-                <div class="flex flex-col items-center max-w-xs">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-gray-700 p-3 rounded-full mr-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" fill="none">
-                                <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.25 6.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193q-.51.041-1.02.072v3.091l-3-3q-2.031 0-4.02-.163a2.1 2.1 0 0 1-.825-.242m9.345-8.334a2 2 0 0 0-.476-.095 48.6 48.6 0 0 0-8.048 0C9.595 6.51 8.75 7.473 8.75 8.608v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V4.637c0-1.621-1.152-3.026-2.76-3.235A48.5 48.5 0 0 0 10.25 1c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235q.865.113 1.74.194V19l4.155-4.155"></path>
-                            </svg>
-                        </div>
-                        <h5 class="text-xl font-semibold">Support Team</h5>
-                    </div>
-                    <p class="text-gray-400 mt-2">
-                        The support team, that is available in Telegram, by email, right on our website in the form of tickets or as a personal manager for our merchants, is always there to solve issues and answer your customers' questions instantly.
-                    </p>
+    
+                <!-- Stat 4 -->
+                <div class="text-center">
+                    <p class="text-gray-400 text-sm md:text-lg mb-2 font-medium">Avg. Processing Time</p>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white">8 Minutes</h1>
                 </div>
-            </div>
-
-            <!-- Button aligned to the left with different background color -->
-            <div class="col-12 mt-4 flex justify-start">
-                <button class="bg-blue-500 text-white font-semibold py-3 px-5 rounded-lg hover:bg-blue-400 transition-all duration-300">PERFORM AN EXCHANGE</button>
             </div>
         </div>
     </div>
-</div>
+    
+    
 
 
-
-
-<div class="bg-white py-10">
-    <div class="container mx-auto px-4 lg:px-6">
-        <!-- Title Section -->
-        <div data-aos="fade-up" data-aos-duration="400" class="text-center lg:text-left">
-            <h1 class="text-3xl md:text-4xl font-bold text-black">
-                Get instant crypto loans
-            </h1>
-        </div>
-
-        <!-- Content Section -->
-        <div class="bg-gray-100 p-6 mt-6 rounded-lg">
-            <div class="flex flex-wrap lg:flex-nowrap gap-8">
-                <!-- Left Column (Text Section) -->
-                <div class="w-full lg:w-5/12">
-                    <div class="p-4">
-                        <h3 class="text-xl md:text-2xl font-semibold text-black">
-                            Secure a USDT loan by depositing your cryptocurrency as collateral
-                        </h3>
-
-                        <!-- Feature List -->
-                        <div class="mt-6 space-y-4">
-                            <!-- Feature 1 -->
-                            <div class="flex items-start">
-                                <i class="fa fa-circle text-blue-500 mt-1" style="font-size: 10px;"></i>
-                                <p class="ml-3 text-black text-base">
-                                    Deposit an accepted cryptocurrency and receive USDT instantly.
-                                </p>
-                            </div>
-
-                            <!-- Feature 2 -->
-                            <div class="flex items-start">
-                                <i class="fa fa-circle text-blue-500 mt-1" style="font-size: 10px;"></i>
-                                <p class="ml-3 text-black text-base">
-                                    Close your loan at any time - after a few hours, in a month or a year later.
-                                </p>
-                            </div>
-
-                            <!-- Feature 3 -->
-                            <div class="flex items-start">
-                                <i class="fa fa-circle text-blue-500 mt-1" style="font-size: 10px;"></i>
-                                <p class="ml-3 text-black text-base">
-                                    Our loan fees are competitively low, with a fixed Loan-to-Value ratio of 50%. The better your performance score in loan activities, the lower the interest fees.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column (Image Section) -->
-                <div class="w-full lg:w-7/12">
-                    <img 
-                        src="./assets/loan-show.png" 
-                        alt="Crypto Loan" 
-                        class="w-full h-auto rounded-lg object-cover"
+    <div class="relative bg-black py-10" id="faqs">
+        <div class="container mx-auto px-4 lg:px-10">
+            <!-- FAQs Header -->
+            <div class="text-center mb-8">
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-white">
+                    FAQs
+                </h2>
+            </div>
+    
+            <!-- FAQ Items -->
+            <div class="bg-gray-700 text-white rounded-lg shadow-lg p-6 lg:p-8">
+                <!-- FAQ 1 -->
+                <div class="border-b border-gray-600 pb-4">
+                    <div 
+                        class="flex justify-between items-center cursor-pointer faq-header" 
+                        data-target="#faq1"
                     >
+                        <h5 class="text-lg lg:text-xl font-semibold flex-grow">
+                            How does PixxoDex OTC work?
+                        </h5>
+                        <small class="bg-gray-600 text-white px-2 py-1 rounded-lg">
+                            <i class="fa fa-angle-down"></i>
+                        </small>
+                    </div>
+                    <div class="hidden mt-3 text-gray-200 faq-content" id="faq1">
+                        <p class="text-sm lg:text-base leading-relaxed">
+                            PixxoDex OTC crypto exchange accomplishes high-volume transactions in a legal and secure way. 
+                            Trades are facilitated swiftly and discreetly, facilitating exchanges over one million Euro. 
+                            The best characteristic of the OTC crypto exchange is that such substantial transactions do not 
+                            cause noticeable fluctuations in market prices and eliminate the risks associated with price 
+                            volatility or slippage.
+                        </p>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Button Section -->
-            <div class="mt-6 text-center lg:text-left">
-                <a href="crypto-loan/index.html">
-                    <button class="px-6 py-3 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-all duration-300">
-                        START NEW LOAN
-                    </button>
-                </a>
+    
+                <!-- FAQ 2 -->
+                <div class="border-b border-gray-600 pb-4 mt-6">
+                    <div 
+                        class="flex justify-between items-center cursor-pointer faq-header" 
+                        data-target="#faq2"
+                    >
+                        <h5 class="text-lg lg:text-xl font-semibold flex-grow">
+                            What Fees does PixxoDex have?
+                        </h5>
+                        <small class="bg-gray-600 text-white px-2 py-1 rounded-lg">
+                            <i class="fa fa-angle-down"></i>
+                        </small>
+                    </div>
+                    <div class="hidden mt-3 text-gray-200 faq-content" id="faq2">
+                        <p class="text-sm lg:text-base leading-relaxed">
+                            PixxoDex allows businesses and individuals to pay and accept payments in crypto, 
+                            as well as reduce processing costs via lower fees. With traditional banking, fees 
+                            can go as high as 5%, while the PixxoDex transaction fee is less than 1%. Moreover, 
+                            we don't charge any setup or hidden monthly fees.
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- FAQ 3 -->
+                <div class="border-b border-gray-600 pb-4 mt-6">
+                    <div 
+                        class="flex justify-between items-center cursor-pointer faq-header" 
+                        data-target="#faq3"
+                    >
+                        <h5 class="text-lg lg:text-xl font-semibold flex-grow">
+                            How do I withdraw exchanged coins?
+                        </h5>
+                        <small class="bg-gray-600 text-white px-2 py-1 rounded-lg">
+                            <i class="fa fa-angle-down"></i>
+                        </small>
+                    </div>
+                    <div class="hidden mt-3 text-gray-200 faq-content" id="faq3">
+                        <p class="text-sm lg:text-base leading-relaxed">
+                            After a successful trade, the exchanged coins are moved to your spot wallet. You can easily 
+                            withdraw to your preferred digital wallet by proceeding to request for withdrawal. Withdrawals 
+                            are processed instantly.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    
+    
+    
 
+  
 
-
-
-
-
+    <div class="container-fluid py-5 bg-black" data-aos="fade-up" data-aos-duration="400">
+        <div class="container py-4 px-4 lg:px-10">
+            <h1 class="text-3xl lg:text-4xl font-extrabold text-white text-center">Feedbacks</h1>
+            <h5 class="text-base lg:text-lg text-white text-center mt-2">Testimonials from our platform users.</h5>
+    
+            <!-- Carousel Section -->
+            <div id="carouselExampleIndicators" class="carousel slide mt-5 position-relative" data-bs-ride="carousel">
+                
+                <!-- Indicators -->
+                <ol class="carousel-indicators position-absolute top-0 left-1/2 transform -translate-x-1/2 flex space-x-2 justify-center z-10">
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="w-2.5 h-2.5 rounded-full bg-gray-500 cursor-pointer active"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="w-2.5 h-2.5 rounded-full bg-gray-500 cursor-pointer"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="w-2.5 h-2.5 rounded-full bg-gray-500 cursor-pointer"></li>
+                </ol>
+    
+                <!-- Carousel Inner -->
+                <div class="carousel-inner text-center px-4 lg:px-8">
+                    <!-- First Item -->
+                    <div class="carousel-item active">
+                        <div class="flex items-center justify-center space-x-4 py-6">
+                            <span class="w-16 h-0.5 bg-gray-300"></span>
+                            <p class="text-sm lg:text-base max-w-xl text-white mx-4 font-bold">
+                                I am thoroughly impressed with the intuitive and user-friendly interface of this crypto exchange platform. The seamless navigation and well-designed layout make trading a breeze. The platform's commitment to providing a positive user experience truly sets it apart in the crypto space.
+                            </p>
+                            <span class="w-16 h-0.5 bg-gray-300"></span>
+                        </div>
+                        <p class="mt-4 font-semibold text-white">Twitter</p>
+                    </div>
+    
+                    <!-- Second Item -->
+                    <div class="carousel-item">
+                        <div class="flex items-center justify-center space-x-4 py-6">
+                            <span class="w-16 h-0.5 bg-gray-300"></span>
+                            <p class="text-sm lg:text-base max-w-xl text-white mx-4 font-bold">
+                                I am impressed with Pixxodex's commitment to ensuring swift and secure transactions. Deposits and withdrawals are processed seamlessly, reflecting the platform's dedication to providing a reliable and trustworthy trading environment. Knowing that my transactions are handled efficiently adds an extra layer of confidence to my crypto trading journey.
+                            </p>
+                            <span class="w-16 h-0.5 bg-gray-300"></span>
+                        </div>
+                        <p class="mt-4 font-semibold text-white">Twitter</p>
+                    </div>
+    
+                    <!-- Third Item -->
+                    <div class="carousel-item">
+                        <div class="flex items-center justify-center space-x-4 py-6">
+                            <span class="w-16 h-0.5 bg-gray-300"></span>
+                            <p class="text-sm lg:text-base max-w-xl text-white mx-4 font-bold">
+                                Pixxodex's customer support is nothing short of outstanding. The team is not only knowledgeable but also highly responsive. Every query or concern I've had was addressed promptly and with great professionalism. The exceptional customer service at Pixxodex truly sets it apart, creating a supportive and reassuring atmosphere for users.
+                            </p>
+                            <span class="w-16 h-0.5 bg-gray-300"></span>
+                        </div>
+                        <p class="mt-4 font-semibold text-white">Discord</p>
+                    </div>
+                </div>
+    
+                <!-- Carousel Controls (Previous/Next) -->
+                <button class="carousel-control-prev absolute top-1/2 left-0 transform -translate-y-1/2 text-white hover:bg-gray-800 bg-transparent rounded-full p-2" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-white rounded-full p-2" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next absolute top-1/2 right-0 transform -translate-y-1/2 text-white hover:bg-gray-800 bg-transparent rounded-full p-2" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-white rounded-full p-2" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+    
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
 
 
 
