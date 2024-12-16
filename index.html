@@ -18,41 +18,42 @@
   </div>
 
   <!-- Navbar -->
-  <nav class="sticky top-0 w-full z-10 bg-black">
+  <nav class="sticky top-0 w-full z-10 bg-black shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <!-- Logo -->
-        <div class="flex items-center space-x-2">
-          <img src="./assets/logo.png" alt="Logo" class="h-8 w-8">
-          <span class="text-lg font-bold">swapchainp2pservice</span>
-        </div>
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <img src="./assets/logo.png" alt="Logo" class="h-8 w-8">
+                <span class="text-lg font-bold text-white">swapchainp2pservice</span>
+            </div>
 
-        <!-- Desktop Links -->
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="#" class="hover:text-gray-300">Company</a>
-          <a href="#" class="hover:text-gray-300">Support</a>
-          <button class="text-sm px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
-            Sign In
-          </button>
-          <button class="text-sm px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-200 transition">
-            Get Started
-          </button>
-        </div>
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-white hover:text-gray-300">Company</a>
+                <a href="#" class="text-white hover:text-gray-300">Support</a>
+                <button class="text-sm px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
+                    Sign In
+                </button>
+                <button class="text-sm px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-200 transition">
+                    Get Started
+                </button>
+            </div>
 
-        <!-- Mobile Menu Trigger -->
-        <div class="md:hidden flex items-center space-x-4">
-          <button class="text-sm px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
-            Login
-          </button>
-          <button id="hamburger" class="focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
+            <!-- Mobile Menu Trigger -->
+            <div class="md:hidden flex items-center space-x-4">
+                <button class="text-sm px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
+                    Login
+                </button>
+                <button id="hamburger" class="focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
-      </div>
     </div>
   </nav>
+
 
   <!-- Sliding Mobile Dropdown Menu -->
   <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-3/4 bg-black shadow-lg z-20 transform translate-x-full transition-transform duration-300">
