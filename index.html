@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pixxodex</title>
+  <title>swapchainp2pservice</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./css/main.css">
-  <script src="./js/main.js"></script>
+  <script src="./js/main.js" defer></script>
+  <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
-
 </head>
 <body class="bg-black text-white">
 
   <!-- Loader -->
-  <div id="loader" class="loader-wrapper">
-    <div class="loader"></div>
+  <div id="loader" class="loader-wrapper fixed inset-0 bg-black flex items-center justify-center z-50">
+    <div class="loader">Loading...</div> <!-- Update this with your actual loader animation -->
   </div>
 
   <!-- Navbar -->
@@ -23,8 +23,8 @@
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <div class="flex items-center space-x-2">
-          <img src="./assets/pixodex-white.png" alt="Logo" class="h-8 w-8">
-          <span class="text-lg font-bold">Pixxodex</span>
+          <img src="./assets/logo.png" alt="Logo" class="h-8 w-8">
+          <span class="text-lg font-bold">swapchainp2pservice</span>
         </div>
 
         <!-- Desktop Links -->
@@ -44,7 +44,7 @@
           <button class="text-sm px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
             Login
           </button>
-          <button id="hamburger" class="focus:outline-none" alt="">
+          <button id="hamburger" class="focus:outline-none">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
@@ -55,12 +55,12 @@
   </nav>
 
   <!-- Sliding Mobile Dropdown Menu -->
-  <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-3/4 bg-black shadow-lg z-20">
+  <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-3/4 bg-black shadow-lg z-20 transform translate-x-full transition-transform duration-300">
     <div class="flex items-center justify-between px-6 py-4 border-b border-gray-700">
       <!-- Logo on the left -->
       <div class="flex items-center space-x-2">
         <img src="./assets/pixodex-white.png" alt="Logo" class="h-8 w-8">
-        <span class="text-lg font-bold">Pixxodex</span>
+        <span class="text-lg font-bold">swapchainp2pservice</span>
       </div>
       <!-- Close button on the right -->
       <button id="closeMenu" class="text-white text-2xl hover:text-gray-400 focus:outline-none">
@@ -82,20 +82,20 @@
     </div>
   </div>
 
-  <!-- Content -->
-  <div class="relative">
-    <!-- Video Background -->
-    <video autoplay muted loop id="animatevideo" class="absolute top-0 left-0 w-full h-full object-cover z-0">
-        <source src="./assets/animate-bg/love-8046_128.mp4" type="video/mp4">
+<!-- Parent Wrapper with Video Background -->
+<div class="relative">
+    <!-- Background Video -->
+    <video autoplay loop muted class="absolute inset-0 w-full h-full object-cover z-0">
+        <source src="/assets/animate-bg/WhatsApp Video 2024-12-16 at 1.28.59 AM.mp4" type="video/mp4">
     </video>
 
-    <!-- Content -->
-    <div class="py-8 relative z-10 bg-black text-white">
+    <!-- Content Sections -->
+    <div class="relative z-10 py-8 text-white">
+        <!-- Section 1 (Content-1) -->
         <div class="container mx-auto pt-8 mt-12 text-center">
             <div class="flex flex-col items-center space-y-8">
                 <!-- Animated Text Section -->
                 <div class="flex items-center justify-center space-x-2">
-                    <!-- Chevron Icon -->
                     <box-icon name="chevrons-right" type="solid" class="text-gray-400 text-xl md:text-2xl"></box-icon>
 
                     <!-- Separator line -->
@@ -143,33 +143,39 @@
                 </div>
             </div>
         </div>
+
+        <!-- Section 2 (Content Section 2) -->
+        <div class="container mx-auto pb-8 px-4 mt-16">
+            <div class="rounded-2xl overflow-hidden shadow-lg bg-gray-800 bg-opacity-70 max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <!-- Text Section -->
+                    <div class="p-6">
+                        <h4 class="text-center md:text-left text-lg md:text-xl text-gray-100 leading-relaxed">
+                            We've developed a comprehensive ecosystem to cater to all your cryptocurrency requirements. From OTC
+                            exchanges and decentralized finance (DeFi) swaps to crypto loans, our seamless management ensures a smooth experience for all your crypto needs.
+                        </h4>
+                    </div>
+
+                    <!-- Image Section -->
+                    <div class="flex justify-center md:justify-end p-4">
+                        <img 
+                            src="./assets/pixodex-ui-show.png" 
+                            alt="Pixodex UI Preview" 
+                            class="w-full max-w-md md:max-w-lg h-auto object-contain rounded-lg shadow-md"
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 
-  
-  
-  
 
-  <script>
-    // Show loader until page is fully loaded
-    window.addEventListener('load', () => {
-      const loader = document.getElementById('loader');
-      loader.style.display = 'none'; // Hide the loader
-    });
 
-    // Mobile Menu Toggle
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const closeMenu = document.getElementById('closeMenu');
 
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.add('show'); // Show the menu
-    });
+   
 
-    closeMenu.addEventListener('click', () => {
-      mobileMenu.classList.remove('show'); // Hide the menu
-    });
-  </script>
+
 </body>
 </html>

@@ -20,3 +20,25 @@ const words = ["FAST & HIGHLY SECURE", "CRYPTO LOANS & MORE", "BORDERLESS EXCHAN
   setInterval(() => {
     changeText();
   }, 5000);
+
+
+
+
+   // Show loader until page is fully loaded
+   window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    loader.style.display = 'none'; // Hide the loader
+  });
+
+  // Mobile Menu Toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenu = document.getElementById('closeMenu');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.add('show'); // Show the menu
+  });
+
+  closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('show'); // Hide the menu
+  });
