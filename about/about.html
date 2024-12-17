@@ -6,7 +6,7 @@
     <title>About</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/main.css">
-    <script src="../js/main.js" defer></script>
+    <!-- <script src="../js/main.js"></script> -->
     <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -27,47 +27,74 @@
     </style>
 </head>
 <body>
-      <!-- Loader -->
-  <div id="loader" class="loader-wrapper fixed inset-0 bg-black flex items-center justify-center z-50">
-    <div class="loader"></div> 
-  </div>
+    <!-- Loader -->
+    <div id="loader" class="loader-wrapper fixed inset-0 bg-black flex items-center justify-center z-50">
+        <div class="loader"></div> 
+    </div>
 
-  <!-- Navbar -->
-  <nav class="sticky top-0 w-full z-10 bg-black shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-            <!-- Logo -->
-            <div class="flex items-center space-x-2">
-                <img src="../assets/logo.png" alt="Logo" class="h-12 w-30">
+    <!-- Navbar -->
+    <nav class="sticky top-0 w-full z-10 bg-black shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <img src="../assets/logo.png" alt="Logo" class="h-12 w-30">
+                </div>
+
+                <!-- Desktop Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-white hover:text-gray-300">Company</a>
+                    <a href="#" class="text-white hover:text-gray-300">Support</a>
+                    <button class="text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
+                        Sign In
+                    </button>
+                    <button class="text-sm px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-200 transition">
+                        Get Started
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Trigger -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <button class="text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
+                        Login
+                    </button>
+                    <button id="hamburger" class="focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="white" stroke-width="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
+        </div>
+    </nav>
 
-            <!-- Desktop Links -->
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#" class="text-white hover:text-gray-300">Company</a>
-                <a href="#" class="text-white hover:text-gray-300">Support</a>
-                <button class="text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
-                    Sign In
-                </button>
-                <button class="text-sm px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-200 transition">
-                    Get Started
-                </button>
-            </div>
-
-           <!-- Mobile Menu Trigger -->
-            <div class="md:hidden flex items-center space-x-4">
-            <button class="text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
+   <!-- Sliding Mobile Dropdown Menu -->
+   <div id="slidingMobileMenu" class="fixed top-0 right-0 h-full w-3/4 bg-black shadow-lg z-20 transform translate-x-full transition-transform duration-300 text-white">
+    <div class="flex items-center justify-between px-6 py-4 border-b border-gray-700">
+        <!-- Logo on the left -->
+        <div class="flex items-center space-x-2">
+            <img src="../assets/logo.png" alt="Logo" class="h-8 w-8">
+        </div>
+        <!-- Close button on the right -->
+        <button id="closeMenu" class="text-white text-2xl hover:text-gray-400 focus:outline-none">
+            &times;
+        </button>
+    </div>
+    <div class="p-6">
+        <a href="#" class="block px-4 py-2 hover:black_gradient_5">Exchange</a>
+        <a href="#" class="block px-4 py-2 hover:black_gradient_5">Support</a>
+        <a href="#" class="block px-4 py-2 hover:black_gradient_5">Frequently Ask Question</a>
+        <div class="mt-6 space-y-4">
+            <button class="block w-full text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
                 Login
             </button>
-            <button id="hamburger" class="focus:outline-none" alt="">
-                <svg class="w-6 h-6" fill="none" stroke="white" stroke-width="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
+            <button class="block w-full text-sm px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-500 transition">
+                Sign Up
             </button>
-            </div>
-
         </div>
     </div>
-  </nav>
+   </div>
+
 
   <div class="container mt-5 py-5">
     <div class="px-4 sm:px-8 lg:px-20">
@@ -118,6 +145,150 @@
     </div>
   </div>
 
+  <div class="bg-gray-100 py-5">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="px-lg-5">
+            <h1 class="text-4xl font-bold text-black">Exchange anytime, anywhere</h1>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-5" data-aos="fade-up" data-aos-duration="400">
+                <!-- Supported Assets -->
+                <div class="col-6">
+                    <p class="text-lg text-black mb-2">Supported Assets</p>
+                    <h1 class="text-2xl font-semibold text-black">70+</h1>
+                </div>
+                
+                <!-- 24Hr. Trade Volume -->
+                <div class="col-6">
+                    <p class="text-lg text-black mb-2">24Hr. Trade Volume</p>
+                    <h1 class="text-2xl font-semibold text-black">8000</h1>
+                </div>
+                
+                <!-- Active Users -->
+                <div class="col-6">
+                    <p class="text-lg text-black mb-2">Active Users</p>
+                    <h1 class="text-2xl font-semibold text-black">2500+</h1>
+                </div>
+                
+                <!-- Avg. Processing Time -->
+                <div class="col-6">
+                    <p class="text-lg text-black mb-2">Avg. Processing Time</p>
+                    <h1 class="text-2xl font-semibold text-black">8 Min.</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
 
+   <!-- ## FOOTER -->
+   <div class="container-fluid py-5 px-md-4 bg-black text-white border-t shadow-none">
+    <div class="container px-4 lg:px-10">
+    <!-- Desktop View -->
+    <div class="hidden lg:block">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- About Us Section -->
+        <div>
+            <h5 class="text-lg font-semibold">About Us</h5>
+            <a href="./about/about.html" class="block mt-3 hover:text-gray-400">About</a>
+            <a href="escrow-service-guarantee/index.html" class="block mt-3 hover:text-gray-400">Guarantee</a>
+            <a href="terms/index.html" class="block mt-3 hover:text-gray-400">Terms</a>
+            <a href="policy/index.html" class="block mt-3 hover:text-gray-400">Policy</a>
+        </div>
+
+        <!-- Products Section -->
+        <div>
+            <h5 class="text-lg font-semibold">Products</h5>
+            <a href="escrow/create-trade" class="block mt-3 hover:text-gray-400">Exchange</a>
+            <a href="escrow/create-trade" class="block mt-3 hover:text-gray-400">Crypto OTC</a>
+            <a href="crypto-loan/index.html" class="block mt-3 hover:text-gray-400">Crypto Loan</a>
+        </div>
+
+        <!-- Learn Section -->
+        <div>
+            <h5 class="text-lg font-semibold">Learn</h5>
+            <a href="https://coinmarketcap.com/" target="_blank" class="block mt-3 hover:text-gray-400">Browse Crypto Prices</a>
+            <a href="https://coinmarketcap.com/currencies/bitcoin/" target="_blank" class="block mt-3 hover:text-gray-400">Bitcoin Price</a>
+            <a href="https://coinmarketcap.com/currencies/ethereum/" target="_blank" class="block mt-3 hover:text-gray-400">Ethereum Price</a>
+        </div>
+
+       <!-- Community Section -->
+        <div>
+            <h5 class="text-lg font-semibold">Community</h5>
+            <div class="flex space-x-4 mt-3">
+                <a href="https://t.me/pixxodex_official" target="_blank" aria-label="Telegram">
+                    <i class="bi bi-telegram text-2xl hover:text-gray-400 text-white"></i>
+                </a>
+                <a href="https://www.instagram.com/pixxodex?igsh=bnhndjFucDF2MmVq" target="_blank" aria-label="Instagram">
+                    <i class="bi bi-instagram text-2xl hover:text-gray-400 text-white"></i>
+                </a>
+            </div>
+        </div>
+
+
+        </div>
+    </div>
+
+    <!-- Mobile View -->
+    <div class="lg:hidden">
+        <!-- Section Wrapper -->
+        <div class="mb-4">
+        <h5 class="text-xl font-semibold flex items-center">
+            <img src="/assets/logo.png" alt="Logo" class="w-9 h-9 mr-2" />
+            swapchainp2pservice
+        </h5>
+        <p class="text-sm text-gray-400">
+            swapchainp2pservice enables you to exchange crypto via our OTC anywhere in the world.
+        </p>
+        </div>
+
+        <!-- Company Section -->
+        <div class="flex justify-between items-center mt-4" onclick="toggleDropdown('company')">
+        <p class="text-lg font-semibold">Company</p>
+        <span id="company-icon" class="text-xl font-semibold">+</span>
+        </div>
+        <div id="company" class="hidden mt-2">
+        <a href="about/index.html" class="block mt-3 hover:text-gray-400">About</a>
+        <a href="escrow-service-guarantee/index.html" class="block mt-3 hover:text-gray-400">Guarantee</a>
+        <a href="terms/index.html" class="block mt-3 hover:text-gray-400">Terms</a>
+        <a href="policy/index.html" class="block mt-3 hover:text-gray-400">Policy</a>
+        </div>
+
+        <!-- Learn Section -->
+        <div class="flex justify-between items-center mt-4" onclick="toggleDropdown('learn')">
+        <p class="text-lg font-semibold">Learn</p>
+        <span id="learn-icon" class="text-xl font-semibold">+</span>
+        </div>
+        <div id="learn" class="hidden mt-2">
+        <a href="https://coinmarketcap.com/" target="_blank" class="block mt-3 hover:text-gray-400">Browse Crypto Prices</a>
+        <a href="https://coinmarketcap.com/currencies/bitcoin/" target="_blank" class="block mt-3 hover:text-gray-400">Bitcoin Price</a>
+        <a href="https://coinmarketcap.com/currencies/ethereum/" target="_blank" class="block mt-3 hover:text-gray-400">Ethereum Price</a>
+        </div>
+
+        <!-- Community Section -->
+        <div class="flex justify-between items-center mt-4" onclick="toggleDropdown('community')">
+        <p class="text-lg font-semibold">Community</p>
+        <span id="community-icon" class="text-xl font-semibold">+</span>
+        </div>
+        <div id="community" class="hidden mt-2 flex space-x-4">
+        <a href="https://t.me/pixxodex_official" target="_blank" aria-label="Telegram">
+            <i class="bi bi-telegram text-2xl hover:text-gray-400"></i>
+        </a>
+        <a href="https://www.instagram.com/pixxodex?igsh=bnhndjFucDF2MmVq" target="_blank" aria-label="Instagram">
+            <i class="bi bi-instagram text-2xl hover:text-gray-400"></i>
+        </a>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="border-t pt-4 mt-5 text-center">
+        <p class="text-xs text-gray-400 mt-4">
+        All or part of the swapchainp2pservice Services, some features thereof, or some Digital Assets, are not available in certain jurisdictions.
+        </p>
+        <p class="text-sm text-gray-400 mt-2">
+        &copy; 2024 swapchainp2pservice. All Rights Reserved.
+        </p>
+    </div>
+    </div>
+   </div>
+
+   <script src="./about.js"></script>
 </body>
 </html>
