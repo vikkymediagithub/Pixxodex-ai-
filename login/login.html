@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="./login.css">
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="bg-black text-white dark-mode">
+    <!-- Loader -->
+    <div id="loader" class="loader-wrapper fixed inset-0 bg-black flex items-center justify-center z-50">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Container -->
+    <div class="container mx-auto min-h-screen flex flex-col justify-between px-4 md:px-0">
+        <!-- Header -->
+        <header class="flex items-center justify-between py-6">
+            <a href="../../index.html" class="flex items-center">
+                <img src="../assets/logo.png" alt="swapchain-logo" class="w-10 h-10">
+                <h3 class="ml-2 text-xl font-semibold">SwapchainP2PService</h3>
+            </a>
+            <div class="hidden md:flex space-x-4">
+                <i id="themeToggle" class="bi bi-sun-fill text-xl theme-toggle-icon"></i>
+                <a href="../../contact-us" class="p-2">
+                    <i class="bi bi-question-circle text-xl theme-toggle-icon"></i>
+                </a>
+                <a href="../signup">
+                    <button class="px-4 py-2 text-black bg-white rounded-lg">Sign Up</button>
+                </a>
+            </div>
+            <div class="md:hidden flex items-center space-x-4">
+                <i id="themeToggleMobile" class="bi bi-sun-fill text-xl theme-toggle-icon"></i>
+                <button onclick="toggleSideBarSm()" class="flex flex-col space-y-1">
+                    <span class="block w-6 h-1 bg-white"></span>
+                    <span class="block w-6 h-1 bg-white"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Horizontal Line -->
+        <div class="border-b border-gray-500 my-6"></div>
+
+        <!-- Login Section -->
+        <main class="flex flex-col justify-center items-center flex-grow">
+            <div class="w-full max-w-lg">
+                <h1 class="text-center text-2xl font-semibold mb-8">Login to SwapchainP2PService</h1>
+                <p class="text-center">Provide your credentials to continue</p>
+                <form action="https://pixxodex.com/account/login-user" method="POST" class="space-y-6 px-6">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="Par12dMRIpBPNZViyaX4zJWf93yym2GBgwjuvnp237AXhdu0q8ngGI9BeGWipDVI">
+                    <div class="relative">
+                        <input type="email" name="user-email" id="id_email" placeholder=" " required class="form-input w-full px-4 py-3 rounded-md text-base">
+                        <label for="id_email">Email Address</label>
+                    </div>
+                    <div class="relative">
+                        <input type="password" name="user-password" id="id_password" placeholder=" " required class="form-input w-full px-4 py-3 rounded-md text-base">
+                        <label for="id_password">Password</label>
+                        <button type="button" onclick="passwordViewToggle()" class="absolute top-4 right-4 text-gray-500">
+                            <i class="bi bi-eye-slash-fill"></i>
+                        </button>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-green-600 text-white font-medium text-lg rounded-lg hover:bg-green-700">Log In</button>
+                    <a href="../password-reset/index.html" class="block text-center text-sm text-gray-400 hover:underline">Forgot your password?</a>
+                </form>
+            </div>
+            <div class="mt-6 max-w-lg text-center">
+                <p class="text-gray-400">
+                    By logging in, you agree to the terms of service and privacy policy of SwapchainP2PService. If you don't have an account, you can <a href="../signup" class="text-green-500 hover:underline">Sign Up</a>.
+                </p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center py-6 text-sm text-gray-400">
+            <p>&copy; 2024 SwapchainP2PService. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Mobile Sidebar -->
+    <aside id="sideBarSm" class="w-64 fixed top-0 right-0 h-full bg-white transform translate-x-full transition-transform">
+        <div class="p-6 space-y-6">
+            <button onclick="toggleSideBarSm()" class="absolute top-4 right-4 text-xl">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <img src="../assets/logo.png" alt="logo" class="w-10 h-10 mx-auto mb-6">
+            <nav class="space-y-4 mt-12">
+                <a href="../../about/index.html" class="block text-lg">About</a>
+                <a href="../../contact-us" class="block text-lg">Help</a>
+                <a href="../../terms/index.html" class="block text-lg">Terms of Use</a>
+                <a href="../../policy/index.html" class="block text-lg">Privacy Policy</a>
+            </nav>
+        </div>
+    </aside>
+
+    <script src="./login.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
