@@ -85,3 +85,18 @@ document.getElementById('carouselExampleIndicators').addEventListener('mouseente
 document.getElementById('carouselExampleIndicators').addEventListener('mouseleave', function () {
     carousel.cycle();
 });
+
+
+
+function toggleDropdown(sectionId) {
+  const dropdown = document.getElementById(sectionId);
+  const icon = document.getElementById(`${sectionId}-icon`);
+  
+  if (dropdown.classList.contains("hidden")) {
+    dropdown.classList.remove("hidden");
+    icon.textContent = "-"; // Show minus icon
+  } else {
+    dropdown.classList.add("hidden");
+    icon.textContent = "+"; // Show plus icon
+  }
+}
