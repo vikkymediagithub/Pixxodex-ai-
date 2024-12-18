@@ -113,3 +113,23 @@ window.smartsupp||(function(d) {
   c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
 })(document);
 
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const toggles = document.querySelectorAll("[data-toggle='collapse']");
+  
+  toggles.forEach((toggle) => {
+      toggle.addEventListener("click", function() {
+          const target = document.querySelector(toggle.getAttribute("data-target"));
+          if (target) {
+              // Toggle collapse visibility
+              if (target.style.display === "none" || target.style.display === "") {
+                  target.style.display = "block";
+              } else {
+                  target.style.display = "none";
+              }
+          }
+      });
+  });
+});
