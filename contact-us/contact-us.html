@@ -44,22 +44,24 @@
                     <img src="../assets/logo.png" alt="Logo" class="h-12 w-30">
                 </a>
               </div>
+
             <!-- Desktop Links -->
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#" class="text-white hover:text-gray-300">Company</a>
-                <a href="#" class="text-white hover:text-gray-300">Support</a>
+                <a href="./about/about.html" class="text-white hover:text-gray-300">Company</a>
+                <a href="./contact-us/contact-us.html" class="text-white hover:text-gray-300">Support</a>
                 <button class="text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
-                    Sign In
+                  <a href="./account/login.html" >Sign In</a>
                 </button>
                 <button class="text-sm px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-200 transition">
-                    Get Started
+                  <a href="./account/create.html" >Get Started</a>
                 </button>
             </div>
 
             <!-- Mobile Menu Trigger -->
             <div class="md:hidden flex items-center space-x-4">
                 <button class="text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
-                    Login
+                <a href="./account/login.html" >Login</a>
+          
                 </button>
                 <button id="hamburger" class="focus:outline-none" alt="">
                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -71,13 +73,12 @@
     </div>
   </nav>
 
-
   <!-- Sliding Mobile Dropdown Menu -->
   <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-3/4 bg-black shadow-lg z-20 transform translate-x-full transition-transform duration-300">
     <div class="flex items-center justify-between px-6 py-4 border-b border-gray-700">
       <!-- Logo on the left -->
       <div class="flex items-center space-x-2">
-        <img src="../assets/logo.png" alt="Logo" class="h-8 w-8">
+        <a href='index.html'><img src="../assets/logo.png" alt="Logo" class="h-8 w-8"></a>
       </div>
       <!-- Close button on the right -->
       <button id="closeMenu" class="text-white text-2xl hover:text-gray-400 focus:outline-none">
@@ -85,15 +86,15 @@
       </button>
     </div>
     <div class="p-6 text-white">
-      <a href="#" class="block px-4 py-2 hover:black_gradient_5">Exchange</a>
-      <a href="#" class="block px-4 py-2 hover:black_gradient_5">Support</a>
-      <a href="#" class="block px-4 py-2 hover:black_gradient_5">Frequently Ask Question</a>
+      <a href="./account/create.html" class="block px-4 py-2 hover:black_gradient_5">Exchange</a>
+      <a href="contact-us.html" class="block px-4 py-2 hover:black_gradient_5">Support</a>
+      <a href="index.html#faqs" class="block px-4 py-2 hover:black_gradient_5">Frequently Ask Question</a>
       <div class="mt-6 space-y-4">
         <button class="block w-full text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
-          Login
+          <a href="./account/login.html">Login</a>
         </button>
         <button class="block w-full text-sm px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-500 transition">
-          Sign Up
+          <a href="./account/create.html" >Sign Up</a>
         </button>
       </div>
     </div>

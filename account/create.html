@@ -43,27 +43,28 @@
               </div>
             <!-- Desktop Links -->
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#" class="text-white hover:text-gray-300">Company</a>
-                <a href="#" class="text-white hover:text-gray-300">Support</a>
+                <a href="./about/about.html" class="text-white hover:text-gray-300">Company</a>
+                <a href="./contact-us/contact-us.html" class="text-white hover:text-gray-300">Support</a>
                 <button class="text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
-                    Sign In
+                  <a href="./account/login.html" >Sign In</a>
                 </button>
                 <button class="text-sm px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-200 transition">
-                    Get Started
+                  <a href="./account/create.html" >Get Started</a>
                 </button>
             </div>
 
-            <!-- Mobile Menu Trigger -->
-            <div class="md:hidden flex items-center space-x-4">
-                <button class="text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
-                    Login
-                </button>
-                <button id="hamburger" class="focus:outline-none" alt="">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
+           <!-- Mobile Menu Trigger -->
+           <div class="md:hidden flex items-center space-x-4">
+            <button class="text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
+            <a href="./account/login.html" >Login</a>
+      
+            </button>
+            <button id="hamburger" class="focus:outline-none" alt="">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
         </div>
     </div>
   </nav>
@@ -82,18 +83,18 @@
       </button>
     </div>
     <div class="p-6 text-white">
-      <a href="#" class="block px-4 py-2 hover:black_gradient_5">Exchange</a>
-      <a href="#" class="block px-4 py-2 hover:black_gradient_5">Support</a>
-      <a href="#" class="block px-4 py-2 hover:black_gradient_5">Frequently Ask Question</a>
-      <div class="mt-6 space-y-4">
-        <button class="block w-full text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
-          Login
-        </button>
-        <button class="block w-full text-sm px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-500 transition">
-          Sign Up
-        </button>
+        <a href="./account/create.html" class="block px-4 py-2 hover:black_gradient_5">Exchange</a>
+        <a href="contact-us.html" class="block px-4 py-2 hover:black_gradient_5">Support</a>
+        <a href="index.html#faqs" class="block px-4 py-2 hover:black_gradient_5">Frequently Ask Question</a>
+        <div class="mt-6 space-y-4">
+          <button class="block w-full text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
+            <a href="./account/login.html">Login</a>
+          </button>
+          <button class="block w-full text-sm px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-500 transition">
+            <a href="./account/create.html" >Sign Up</a>
+          </button>
+        </div>
       </div>
-    </div>
   </div>
 
 
@@ -136,29 +137,25 @@
                 <input type="checkbox" name="ch" id="ch" class="mr-2" />
                 <span class="text-lg">Remember for 30 days</span>
             </div>
-            <a href="../password-reset/index.html" class="font-bold text-lg hover:underline">Forgot password?</a>
+            <span class="font-bold text-lg">Forgot password</span>
             </div>
     
             <button
             class="w-full bg-green-500 text-white p-3 rounded-lg mb-6 hover:bg-green-600 focus:outline-none transition duration-200"
-            type="submit"
             >
             Sign in
             </button>
             
-            <a href="../google-signin" class="w-full border border-gray-500 text-lg p-3 rounded-lg mb-6 hover:bg-black hover:text-white transition duration-200">
+            <button
+            class="w-full border border-gray-500 text-lg p-3 rounded-lg mb-6 hover:bg-black hover:text-white transition duration-200"
+            >
             <img src="../assets/google.svg" alt="Google Icon" class="w-6 h-6 inline mr-2" />
             Sign in with Google
-            </a>
+            </button>
     
             <div class="text-center text-gray-400">
             Don't have an account? 
-            <a href="../signup" class="font-bold text-white hover:underline">Sign up for free</a>
-            </div>
-
-            <!-- Terms & Conditions link -->
-            <div class="text-center mt-4 text-gray-400">
-            <a href="../terms" class="text-sm text-gray-400 hover:underline">By signing up, you agree to our Terms and Conditions.</a>
+            <span class="font-bold text-white">Sign up for free</span>
             </div>
         </div>
     
@@ -188,7 +185,6 @@
         overflow: hidden; /* Disable scrolling */
     }
     </style>
-
 
   
   
