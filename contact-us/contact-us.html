@@ -100,11 +100,10 @@
   </div>
 
 
-
   <div class="container mx-auto py-12 px-6 lg:px-20">
     <div>
         <!-- Header -->
-        <h1 class="text-3xl lg:text-4xl font-bold text-gray-800 mt-6">swapchainp2pservice Support</h1>
+        <h1 class="text-3xl lg:text-4xl font-bold text-gray-800 mt-6">Pixxodex Support</h1>
         <h4 class="text-lg lg:text-xl font-medium text-gray-800 mt-5">Support Articles and FAQs</h4>
 
         <!-- FAQ Section -->
@@ -113,14 +112,14 @@
             <div class="border border-gray-300 rounded-lg p-4 mb-4">
                 <div
                     class="flex justify-between items-center cursor-pointer"
-                    data-toggle="collapse"
-                    data-target="#faq1"
+                    onclick="toggleCollapse('faq1')"
                 >
-                    <p class="text-sm font-medium text-gray-800 flex-grow">How does PixoDex OTC work?</p>
+                    <p class="text-base lg:text-lg font-medium text-gray-800 flex-grow">How does PixoDex OTC work?</p>
                     <i class="fa fa-angle-down text-gray-800"></i>
                 </div>
-                <div class="collapse" id="faq1" style="display:none;">
-                    <p class="text-sm text-gray-600 mt-3">
+                <!-- # -->
+                <div id="faq1" class="collapse-content hidden">
+                    <p class="text-base lg:text-lg text-gray-600 mt-3">
                         PixoDex OTC crypto exchange accomplishes high-volume transactions in a legal and secure way. Trades are facilitated swiftly and discreetly, facilitating exchanges over one million Euro. The best characteristic of the OTC crypto exchange is that such substantial transactions do not cause noticeable fluctuations in market prices and eliminate the risks associated with price volatility or slippage.
                     </p>
                 </div>
@@ -130,14 +129,14 @@
             <div class="border border-gray-300 rounded-lg p-4 mb-4">
                 <div
                     class="flex justify-between items-center cursor-pointer"
-                    data-toggle="collapse"
-                    data-target="#faq2"
+                    onclick="toggleCollapse('faq2')"
                 >
-                    <p class="text-sm font-medium text-gray-800 flex-grow">What fees does PixoDex have?</p>
+                    <p class="text-base lg:text-lg font-medium text-gray-800 flex-grow">What fees does PixoDex have?</p>
                     <i class="fa fa-angle-down text-gray-800"></i>
                 </div>
-                <div class="collapse" id="faq2" style="display:none;">
-                    <p class="text-sm text-gray-600 mt-3">
+                <!-- # -->
+                <div id="faq2" class="collapse-content hidden">
+                    <p class="text-base lg:text-lg text-gray-600 mt-3">
                         PixoDex allows businesses and individuals to pay and accept payments in crypto, as well as reduce processing cost via lower fees. With traditional banking, fees can go as high as 5% while the PixoDex transaction fee is less than 1%. Moreover, we don't charge any setup or monthly hidden fees.
                     </p>
                 </div>
@@ -147,14 +146,14 @@
             <div class="border border-gray-300 rounded-lg p-4 mb-4">
                 <div
                     class="flex justify-between items-center cursor-pointer"
-                    data-toggle="collapse"
-                    data-target="#faq3"
+                    onclick="toggleCollapse('faq3')"
                 >
-                    <p class="text-sm font-medium text-gray-800 flex-grow">How do I withdraw exchanged coins?</p>
+                    <p class="text-base lg:text-lg font-medium text-gray-800 flex-grow">How do I withdraw exchanged coins?</p>
                     <i class="fa fa-angle-down text-gray-800"></i>
                 </div>
-                <div class="collapse" id="faq3" style="display:none;">
-                    <p class="text-sm text-gray-600 mt-3">
+                <!-- # -->
+                <div id="faq3" class="collapse-content hidden">
+                    <p class="text-base lg:text-lg text-gray-600 mt-3">
                         After a successful trade, the exchanged coins are moved to your spot wallet. You can easily withdraw to your preferred digital wallet by proceeding to request for withdrawal. Withdrawals are processed instantly.
                     </p>
                 </div>
@@ -162,7 +161,7 @@
         </div>
 
         <!-- Contact Form -->
-        <h3 class="text-2xl font-semibold text-gray-800 mt-12">Contact Form</h3>
+        <h3 class="text-2xl lg:text-3xl font-semibold text-gray-800 mt-12">Contact Form</h3>
         <form
             action="contact-us"
             method="POST"
@@ -176,38 +175,38 @@
 
             <!-- Email Field -->
             <div>
-                <label class="block text-sm font-medium text-gray-800 mb-2">Your email address</label>
+                <label class="block text-base lg:text-lg font-medium text-gray-800 mb-2">Your email address</label>
                 <input
                     type="email"
                     name="email"
                     placeholder="Enter email"
-                    class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-800 focus:ring-2 focus:ring-blue-500"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 text-base lg:text-lg text-gray-800 focus:ring-2 focus:ring-blue-500"
                     required
                 />
             </div>
 
             <!-- Reason Field -->
             <div>
-                <label class="block text-sm font-medium text-gray-800 mb-2">Reason</label>
+                <label class="block text-base lg:text-lg font-medium text-gray-800 mb-2">Reason</label>
                 <input
                     type="text"
                     name="reason"
                     placeholder="Please enter a reason"
-                    class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-800 focus:ring-2 focus:ring-blue-500"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 text-base lg:text-lg text-gray-800 focus:ring-2 focus:ring-blue-500"
                     required
                 />
             </div>
 
             <!-- Description Field -->
             <div>
-                <label class="block text-sm font-medium text-gray-800 mb-2">
+                <label class="block text-base lg:text-lg font-medium text-gray-800 mb-2">
                     Brief description on how we can help you
                 </label>
                 <textarea
                     name="description"
                     rows="5"
                     placeholder="Please provide your question or how we may help"
-                    class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-800 focus:ring-2 focus:ring-blue-500"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 text-base lg:text-lg text-gray-800 focus:ring-2 focus:ring-blue-500"
                     required
                 ></textarea>
             </div>
@@ -216,7 +215,7 @@
             <div class="text-left">
                 <button
                     type="submit"
-                    class="bg-[#27B793] text-white px-8 py-3 rounded-lg hover:bg-[##1EA281]transition"
+                    class="bg-[#1BB18C] text-white px-8 py-3 rounded-lg hover:bg-[#1B846A] transition text-base lg:text-lg"
                 >
                     Submit
                 </button>
@@ -227,14 +226,25 @@
         <div class="relative bg-gray-50 p-6 mt-12 rounded-lg shadow-lg">
             <div class="absolute inset-0 bg-gray-300 opacity-50 rounded-lg"></div>
             <div class="relative z-10 text-center">
-                <h2 class="text-2xl font-semibold text-gray-800">Chat with a person</h2>
-                <p class="text-gray-600 mt-4">
+                <h2 class="text-2xl lg:text-3xl font-semibold text-gray-800">Chat with a person</h2>
+                <p class="text-base lg:text-lg text-gray-600 mt-4">
                     To chat with a live person, click on the chat button at the right bottom corner of this page.
                 </p>
             </div>
         </div>
     </div>
-   </div>
+  </div>
+
+    <!-- JavaScript for FAQ toggling -->
+    <script>
+        // Toggle visibility of the FAQ answers
+        function toggleCollapse(id) {
+            const target = document.getElementById(id);
+            target.classList.toggle("hidden");
+        }
+    </script>
+
+
 
 
 
@@ -355,6 +365,7 @@
     </div>
     
     <script src="../js/main.js"></script>
+
 
 
 </body>
