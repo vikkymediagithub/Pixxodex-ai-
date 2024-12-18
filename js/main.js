@@ -100,3 +100,5 @@ function toggleDropdown(sectionId) {
     icon.textContent = "+"; // Show plus icon
   }
 }
+
+

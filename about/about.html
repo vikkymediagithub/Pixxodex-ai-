@@ -6,8 +6,7 @@
     <title>About</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/main.css">
-    <!-- <script src="../js/main.js"></script> -->
-    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -32,68 +31,70 @@
         <div class="loader"></div> 
     </div>
 
-    <!-- Navbar -->
-    <nav class="sticky top-0 w-full z-10 bg-black shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <!-- Logo -->
-                <div class="flex items-center space-x-2">
-                    <img src="../assets/logo.png" alt="Logo" class="h-12 w-30">
-                </div>
+  <!-- Navbar -->
+  <nav class="sticky top-0 w-full z-10 bg-black shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <img src="../assets/logo.png" alt="Logo" class="h-12 w-30">
+                <span class="text-lg font-bold text-white"></span>
+            </div>
 
-                <!-- Desktop Links -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="text-white hover:text-gray-300">Company</a>
-                    <a href="#" class="text-white hover:text-gray-300">Support</a>
-                    <button class="text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
-                        Sign In
-                    </button>
-                    <button class="text-sm px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-200 transition">
-                        Get Started
-                    </button>
-                </div>
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-white hover:text-gray-300">Company</a>
+                <a href="#" class="text-white hover:text-gray-300">Support</a>
+                <button class="text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
+                    Sign In
+                </button>
+                <button class="text-sm px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-200 transition">
+                    Get Started
+                </button>
+            </div>
 
-                <!-- Mobile Menu Trigger -->
-                <div class="md:hidden flex items-center space-x-4">
-                    <button class="text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
-                        Login
-                    </button>
-                    <button id="hamburger" class="focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="white" stroke-width="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
-                        </svg>
-                    </button>
-                </div>
+            <!-- Mobile Menu Trigger -->
+            <div class="md:hidden flex items-center space-x-4">
+                <button class="text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
+                    Login
+                </button>
+                <button id="hamburger" class="focus:outline-none" alt="">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
             </div>
         </div>
-    </nav>
+    </div>
+  </nav>
 
-   <!-- Sliding Mobile Dropdown Menu -->
-   <div id="slidingMobileMenu" class="fixed top-0 right-0 h-full w-3/4 bg-black shadow-lg z-20 transform translate-x-full transition-transform duration-300 text-white">
+
+  <!-- Sliding Mobile Dropdown Menu -->
+  <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-3/4 bg-black shadow-lg z-20 transform translate-x-full transition-transform duration-300">
     <div class="flex items-center justify-between px-6 py-4 border-b border-gray-700">
-        <!-- Logo on the left -->
-        <div class="flex items-center space-x-2">
-            <img src="../assets/logo.png" alt="Logo" class="h-8 w-8">
-        </div>
-        <!-- Close button on the right -->
-        <button id="closeMenu" class="text-white text-2xl hover:text-gray-400 focus:outline-none">
-            &times;
+      <!-- Logo on the left -->
+      <div class="flex items-center space-x-2">
+        <img src="../assets/logo.png" alt="Logo" class="h-8 w-8">
+      </div>
+      <!-- Close button on the right -->
+      <button id="closeMenu" class="text-white text-2xl hover:text-gray-400 focus:outline-none">
+        &times;
+      </button>
+    </div>
+    <div class="p-6 text-white">
+      <a href="#" class="block px-4 py-2 hover:black_gradient_5">Exchange</a>
+      <a href="#" class="block px-4 py-2 hover:black_gradient_5">Support</a>
+      <a href="#" class="block px-4 py-2 hover:black_gradient_5">Frequently Ask Question</a>
+      <div class="mt-6 space-y-4">
+        <button class="block w-full text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
+          Login
         </button>
+        <button class="block w-full text-sm px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-500 transition">
+          Sign Up
+        </button>
+      </div>
     </div>
-    <div class="p-6">
-        <a href="#" class="block px-4 py-2 hover:black_gradient_5">Exchange</a>
-        <a href="#" class="block px-4 py-2 hover:black_gradient_5">Support</a>
-        <a href="#" class="block px-4 py-2 hover:black_gradient_5">Frequently Ask Question</a>
-        <div class="mt-6 space-y-4">
-            <button class="block w-full text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
-                Login
-            </button>
-            <button class="block w-full text-sm px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-500 transition">
-                Sign Up
-            </button>
-        </div>
-    </div>
-   </div>
+  </div>
 
 
   <div class="container mt-5 py-5">
@@ -187,7 +188,7 @@
         <!-- About Us Section -->
         <div>
             <h5 class="text-lg font-semibold">About Us</h5>
-            <a href="./about/about.html" class="block mt-3 hover:text-gray-400">About</a>
+            <a href="../Pixxodex-ai-/about/about.html" class="block mt-3 hover:text-gray-400">About</a>
             <a href="escrow-service-guarantee/index.html" class="block mt-3 hover:text-gray-400">Guarantee</a>
             <a href="terms/index.html" class="block mt-3 hover:text-gray-400">Terms</a>
             <a href="policy/index.html" class="block mt-3 hover:text-gray-400">Policy</a>
@@ -289,6 +290,6 @@
     </div>
    </div>
 
-   <script src="./about.js"></script>
+   <script src="../js/main.js"></script>
 </body>
 </html>
