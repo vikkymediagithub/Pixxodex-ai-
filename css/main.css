@@ -13,6 +13,11 @@
 }
 
 
+html {
+  scroll-behavior: smooth;
+}
+
+
  /* Loader styling */
  .loader-wrapper {
     position: fixed;
