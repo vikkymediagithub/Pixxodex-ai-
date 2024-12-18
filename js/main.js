@@ -116,3 +116,23 @@ window.smartsupp||(function(d) {
 
 
 
+
+  // Get reference to the button
+  const backToTopBtn = document.getElementById("backToTop");
+
+  // Show or hide the button based on scroll position
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.remove("hidden");
+    } else {
+      backToTopBtn.classList.add("hidden");
+    }
+  });
+
+  // Scroll smoothly to the top when the button is clicked
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
