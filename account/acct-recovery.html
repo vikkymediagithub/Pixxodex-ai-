@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account-Recovery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Add Bootstrap CSS (if not included already) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Add Bootstrap JS and required Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <style>
+        .black_gradient_5 {
+            background: linear-gradient(85.17deg, #171717 -0.5%, #1f1f1f 98.72%);
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <!-- Loader -->
+    <div id="loader" class="loader-wrapper fixed inset-0 bg-black flex items-center justify-center z-50">
+        <div class="loader"></div> 
+    </div>
+    
+    <div class="site-container">
+        <div class="py-2">
+            <div class="container mx-auto font-sans text-white">
+                <div class="pb-4">
+                    <form class="w-full max-w-md mx-auto mt-24 bg-gray-800 p-6 rounded-lg shadow-md" method="POST">
+                        <!-- Logo Section -->
+                        <div class="flex justify-center mb-4">
+                            <a href="../../index.html">
+                                <img src="../assets/logo.png" alt="Logo" class="w-8 h-8">
+                            </a>
+                        </div>
+    
+                        <!-- Title Section -->
+                        <div class="text-center mb-6">
+                            <h4 class="text-lg font-bold">Account Recovery</h4>
+                        </div>
+    
+                        <!-- Description Section -->
+                        <div class="text-center mb-4">
+                            <p class="text-sm text-gray-300">
+                                Enter the email associated with your account and we'll send an email with instructions to reset your password.
+                            </p>
+                        </div>
+    
+                        <!-- CSRF Token -->
+                        <input type="hidden" name="csrfmiddlewaretoken" value="gDynEYnQU9uT5Uh623ZPMuUFZMSxFzo5HZqQ7801fRt1z8QOU1p1Tt714pghIaDc">
+    
+                        <!-- Email Input -->
+                        <div class="mb-4">
+                            <label for="id_email" class="block text-sm font-medium mb-1">Email<span class="text-red-500">*</span></label>
+                            <input 
+                                type="email" 
+                                name="email" 
+                                autocomplete="email" 
+                                maxlength="254" 
+                                class="w-full px-3 py-2 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                                required 
+                                id="id_email">
+                        </div>
+    
+                        <!-- Submit Button -->
+                        <div class="text-center mt-6">
+                            <button 
+                                type="submit" 
+                                class="w-1/2 bg-[#27B763] hover:bg-[bg-[#4DA150]  text-white py-2 px-4 rounded-lg transition duration-200">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
