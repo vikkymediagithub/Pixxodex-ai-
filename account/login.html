@@ -31,72 +31,102 @@
         <div class="loader"></div> 
     </div>
 
-  <!-- Navbar -->
-  <nav class="sticky top-0 w-full z-10 bg-black shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-           <!-- logo -->
-           <div class="flex items-center space-x-2">
-            <a href="../index.html">
-                <img src="../assets/logo.png" alt="Logo" class="h-12 w-30">
-            </a>
-          </div>
-
-            <!-- Desktop Links -->
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="./about/about.html" class="text-white hover:text-gray-300">Company</a>
-                <a href="./contact-us/contact-us.html" class="text-white hover:text-gray-300">Support</a>
-                <button class="text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
-                  <a href="./account/login.html" >Sign In</a>
-                </button>
-                <button class="text-sm px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-200 transition">
-                  <a href="./account/create.html" >Get Started</a>
-                </button>
-            </div>
-
-            <!-- Mobile Menu Trigger -->
-            <div class="md:hidden flex items-center space-x-4">
-                <button class="text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
-                <a href="./account/login.html" >Login</a>
-          
-                </button>
-                <button id="hamburger" class="focus:outline-none" alt="">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-  </nav>
-
-
-  <!-- Sliding Mobile Dropdown Menu -->
-  <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-3/4 bg-black shadow-lg z-20 transform translate-x-full transition-transform duration-300">
-    <div class="flex items-center justify-between px-6 py-4 border-b border-gray-700">
-      <!-- Logo on the left -->
+<!-- Navbar -->
+<nav class="sticky top-0 w-full z-10 bg-black shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
       <div class="flex items-center space-x-2">
-        <a href="/index.html"><img src="../assets/logo.png" alt="Logo" class="h-8 w-8"></a>
+        <a href="../index.html">
+          <img src="../assets/logo.png" alt="Logo" class="h-12 w-30">
+        </a>
       </div>
-      <!-- Close button on the right -->
-      <button id="closeMenu" class="text-white text-2xl hover:text-gray-400 focus:outline-none">
-        &times;
-      </button>
-    </div>
-    <div class="p-6 text-white">
-      <a href="./account/create.html" class="block px-4 py-2 hover:black_gradient_5">Exchange</a>
-      <a href="contact-us.html" class="block px-4 py-2 hover:black_gradient_5">Support</a>
-      <a href="index.html#faqs" class="block px-4 py-2 hover:black_gradient_5">Frequently Ask Question</a>
-      <div class="mt-6 space-y-4">
-        <button class="block w-full text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
-          <a href="./account/login.html">Login</a>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center space-x-8">
+        <!-- Dark Mode Theme Icon (Crescent Moon) -->
+        <button class="text-white hover:text-gray-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+            <path d="M7.08 11.25A4.84 4.84 0 0 1 8 9.05L4.43 5.49A9.88 9.88 0 0 0 2 11.25zM9.05 8a4.84 4.84 0 0 1 2.2-.91V2a9.88 9.88 0 0 0-5.76 2.43zm3.7-6v5A4.84 4.84 0 0 1 15 8l3.56-3.56A9.88 9.88 0 0 0 12.75 2zM8 15a4.84 4.84 0 0 1-.91-2.2H2a9.88 9.88 0 0 0 2.39 5.76zm3.25 1.92a4.84 4.84 0 0 1-2.2-.92l-3.56 3.57A9.88 9.88 0 0 0 11.25 22zM16 9.05a4.84 4.84 0 0 1 .91 2.2h5a9.88 9.88 0 0 0-2.39-5.76zM15 16a4.84 4.84 0 0 1-2.2.91v5a9.88 9.88 0 0 0 5.76-2.39zm1.92-3.25A4.84 4.84 0 0 1 16 15l3.56 3.56A9.88 9.88 0 0 0 22 12.75z"></path>
+          </svg>
         </button>
-        <button class="block w-full text-sm px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-500 transition">
-          <a href="./account/create.html" >Sign Up</a>
+
+        <!-- Help Icon (Link to Help Page) -->
+        <a href="../contact-us/contact-us.html" class="text-white hover:text-gray-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+            <path d="M12 6a3.939 3.939 0 0 0-3.934 3.934h2C10.066 8.867 10.934 8 12 8s1.934.867 1.934 1.934c0 .598-.481 1.032-1.216 1.626a9.208 9.208 0 0 0-.691.599c-.998.997-1.027 2.056-1.027 2.174V15h2l-.001-.633c.001-.016.033-.386.441-.793.15-.15.339-.3.535-.458.779-.631 1.958-1.584 1.958-3.182A3.937 3.937 0 0 0 12 6zm-1 10h2v2h-2z"></path>
+            <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path>
+          </svg>
+        </a>
+
+        <!-- Login Button -->
+        <button class="text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
+          <a href="../account/login.html">Login</a>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Trigger -->
+      <div class="md:hidden flex items-center space-x-4">
+        <!-- Dark Mode Theme Icon (Crescent Moon) -->
+        <button class="text-white hover:text-gray-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+            <path d="M7.08 11.25A4.84 4.84 0 0 1 8 9.05L4.43 5.49A9.88 9.88 0 0 0 2 11.25zM9.05 8a4.84 4.84 0 0 1 2.2-.91V2a9.88 9.88 0 0 0-5.76 2.43zm3.7-6v5A4.84 4.84 0 0 1 15 8l3.56-3.56A9.88 9.88 0 0 0 12.75 2zM8 15a4.84 4.84 0 0 1-.91-2.2H2a9.88 9.88 0 0 0 2.39 5.76zm3.25 1.92a4.84 4.84 0 0 1-2.2-.92l-3.56 3.57A9.88 9.88 0 0 0 11.25 22zM16 9.05a4.84 4.84 0 0 1 .91 2.2h5a9.88 9.88 0 0 0-2.39-5.76zM15 16a4.84 4.84 0 0 1-2.2.91v5a9.88 9.88 0 0 0 5.76-2.39zm1.92-3.25A4.84 4.84 0 0 1 16 15l3.56 3.56A9.88 9.88 0 0 0 22 12.75z"></path>
+          </svg>
+        </button>
+
+        <!-- Hamburger Icon for Mobile -->
+        <button id="hamburger" class="focus:outline-none">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
         </button>
       </div>
     </div>
   </div>
+</nav>
+
+<!-- Sliding Mobile Dropdown Menu -->
+<div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-3/4 bg-black shadow-lg z-20 transform translate-x-full transition-transform duration-300">
+  <div class="flex items-center justify-between px-6 py-4 border-b border-gray-700">
+    <!-- Logo on the left -->
+    <div class="flex items-center space-x-2">
+      <a href="/index.html"><img src="../assets/logo.png" alt="Logo" class="h-8 w-8"></a>
+    </div>
+    <!-- Close button on the right -->
+    <button id="closeMenu" class="text-white text-2xl hover:text-gray-400 focus:outline-none">
+      &times;
+    </button>
+  </div>
+
+  <!-- Navigation Links -->
+  <div class="p-6 text-white">
+    <a href="../about/about.html" class="block px-4 py-2 hover:black_gradient_5">About</a>
+    <a href="../contact-us/contact-us.html" class="block px-4 py-2 hover:black_gradient_5">Help</a>
+    <a href="../terms/terms.html" class="block px-4 py-2 hover:black_gradient_5">Terms of Use</a>
+    <a href="../policy/policy.html" class="block px-4 py-2 hover:black_gradient_5">Privacy Policy</a>
+  </div>
+
+  <!-- Login Section at the Bottom -->
+  <div class="p-6 mt-32 text-white rounded-t-lg">
+    <p class="text-sm text-white">Already have an account?</p>
+    <button class="block w-full text-sm px-4 py-2 bg-[#27B763] text-white rounded-lg hover:bg-[#3DD37C] transition">
+      <a href="../account/login.html">Login</a>
+    </button>
+  </div>
+</div>
+
+<script>
+  // Toggle Mobile Menu
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('translate-x-full');
+  });
+
+  // Close Mobile Menu
+  document.getElementById('closeMenu').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.add('translate-x-full');
+  });
+</script>
+
 
 
     <!-- Login Section -->
@@ -157,11 +187,15 @@
         </div>
         </div>
     
-        <!-- Footer Text at the bottom -->
-        <footer class="text-center text-white text-xs sm:text-sm md:text-base px-4 mt-auto py-4 bg-[#0A0707]">
-        All or part of the Pixxodex services, some features thereof, or some Digital Assets, are not available in certain jurisdictions, including where restrictions or limitations may apply, as indicated on the Platform and in the relevant general terms and conditions.
-        <br />
-        Pixxodex © 2024
+       <!-- Footer Text at the bottom -->
+        <footer class="text-center text-white text-xs sm:text-sm md:text-base px-4 py-4 bg-[#0A0707]">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-xs sm:text-sm md:text-base">
+              All or part of the Pixxodex services, some features thereof, or some Digital Assets, are not available in certain jurisdictions, including where restrictions or limitations may apply, as indicated on the Platform and in the relevant general terms and conditions.
+              <br />
+              Pixxodex © 2024
+            </p>
+          </div>
         </footer>
     </div>
     
