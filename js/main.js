@@ -114,6 +114,10 @@ window.smartsupp||(function(d) {
 })(document);
 
 
+setTimeout(function() {
+    _smartsupp('show');
+}, 3000);
+
 
 
 
