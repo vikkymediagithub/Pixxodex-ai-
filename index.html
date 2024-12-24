@@ -26,6 +26,9 @@
   rel="stylesheet"
 />
 
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <style>
     
 .black_gradient_5 {
@@ -607,24 +610,14 @@
     
             <!-- Carousel Section -->
             <div id="carouselExampleIndicators" class="carousel slide mt-5 position-relative" data-bs-ride="carousel">
-                
-                <!-- Indicators -->
-                <ol class="carousel-indicators position-absolute top-0 left-1/2 transform -translate-x-1/2 flex space-x-2 justify-center z-10">
-                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="w-2.5 h-2.5 rounded-full bg-gray-500 cursor-pointer active"></li>
-                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="w-2.5 h-2.5 rounded-full bg-gray-500 cursor-pointer"></li>
-                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="w-2.5 h-2.5 rounded-full bg-gray-500 cursor-pointer"></li>
-                </ol>
-    
                 <!-- Carousel Inner -->
                 <div class="carousel-inner text-center px-4 lg:px-8">
                     <!-- First Item -->
                     <div class="carousel-item active">
                         <div class="flex items-center justify-center space-x-4 py-6">
-                            <!-- <span class="w-16 h-0.5 bg-gray-300"></span> -->
                             <p class="text-sm lg:text-base max-w-xl text-white mx-4 font-bold">
                                 I am thoroughly impressed with the intuitive and user-friendly interface of this crypto exchange platform. The seamless navigation and well-designed layout make trading a breeze. The platform's commitment to providing a positive user experience truly sets it apart in the crypto space.
                             </p>
-                            <!-- <span class="w-16 h-0.5 bg-gray-300"></span> -->
                         </div>
                         <p class="mt-4 font-semibold text-white">Twitter</p>
                     </div>
@@ -632,11 +625,9 @@
                     <!-- Second Item -->
                     <div class="carousel-item">
                         <div class="flex items-center justify-center space-x-4 py-6">
-                            <!-- <span class="w-16 h-0.5 bg-gray-300"></span> -->
                             <p class="text-sm lg:text-base max-w-xl text-white mx-4 font-bold">
                                 I am impressed with SwapChain's commitment to ensuring swift and secure transactions. Deposits and withdrawals are processed seamlessly, reflecting the platform's dedication to providing a reliable and trustworthy trading environment. Knowing that my transactions are handled efficiently adds an extra layer of confidence to my crypto trading journey.
                             </p>
-                            <!-- <span class="w-16 h-0.5 bg-gray-300"></span> -->
                         </div>
                         <p class="mt-4 font-semibold text-white">Twitter</p>
                     </div>
@@ -644,52 +635,59 @@
                     <!-- Third Item -->
                     <div class="carousel-item">
                         <div class="flex items-center justify-center space-x-4 py-6">
-                            <!-- <span class="w-16 h-0.5 bg-gray-300"></span> -->
                             <p class="text-sm lg:text-base max-w-xl text-white mx-4 font-bold">
                                 SwapChain's customer support is nothing short of outstanding. The team is not only knowledgeable but also highly responsive. Every query or concern I've had was addressed promptly and with great professionalism. The exceptional customer service at SwapChain truly sets it apart, creating a supportive and reassuring atmosphere for users.
                             </p>
-                            <!-- <span class="w-16 h-0.5 bg-gray-300"></span> -->
                         </div>
                         <p class="mt-4 font-semibold text-white">Discord</p>
                     </div>
                 </div>
     
+                <!-- Indicators -->
+                <ol class="carousel-indicators position-relative mt-4 flex space-x-2 justify-center z-10">
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active w-2.5 h-2.5 rounded-full bg-gray-500 cursor-pointer"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="w-2.5 h-2.5 rounded-full bg-gray-500 cursor-pointer"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="w-2.5 h-2.5 rounded-full bg-gray-500 cursor-pointer"></li>
+                </ol>
+    
                 <!-- Carousel Controls (Previous/Next) -->
-                <button class="carousel-control-prev absolute top-1/2 left-0 transform -translate-y-1/2 text-white hover:black_gradient_5 bg-transparent rounded-full p-2" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <button class="carousel-control-prev absolute top-1/2 left-0 transform -translate-y-1/2 bg-transparent rounded-full p-2" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon bg-white rounded-full p-2" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next absolute top-1/2 right-0 transform -translate-y-1/2 text-white hover:black_gradient_5 bg-transparent rounded-full p-2" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <button class="carousel-control-next absolute top-1/2 right-0 transform -translate-y-1/2 bg-transparent rounded-full p-2" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                     <span class="carousel-control-next-icon bg-white rounded-full p-2" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
-    
             </div>
         </div>
     </div>
+    
+    
+    
 
-        <!-- Back to Top Button -->
-        <button
-        id="backToTop"
-        class="fixed bottom-24 right-6 bg-black text-white p-4 rounded-full shadow-lg hidden hover:bg-gray-800 transition duration-300"
-        aria-label="Back to Top"
-        >
-        <!-- Icon -->
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6"
-        >
-            <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M19.5 15.75L12 8.25l-7.5 7.5"
-            />
-        </svg>
-        </button>
+    <!-- Back to Top Button -->
+    <button
+    id="backToTop"
+    class="fixed bottom-24 right-6 bg-black text-white p-4 rounded-full shadow-lg hidden hover:bg-gray-800 transition duration-300"
+    aria-label="Back to Top"
+    >
+    <!-- Icon -->
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+    >
+        <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M19.5 15.75L12 8.25l-7.5 7.5"
+        />
+    </svg>
+    </button>
         
 
    <!-- ## FOOTER -->
@@ -804,5 +802,7 @@
    </div>
 
 
+   <!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
