@@ -54,4 +54,18 @@ html {
     transform: translateX(0);
   }
 
+  .carousel-indicators li {
+    width: 10px; /* Make indicators slightly larger for better visibility */
+    height: 10px;
+    border-radius: 50%;
+    background-color: gray; /* Default gray background */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.carousel-indicators li.active {
+    background-color: #069e6d; /* Active indicator color */
+}
+
+
 
