@@ -3,50 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Pixxodex </title>
+    <title>Dashboard</title>
+    <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/dashboard/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
+<body class="bg-[#000] text-gray-100 font-[Anuphan] dark-mode transition-all" id="theme-body">
 
-<body class="bg-white font-sans">
+ <!-- Loader -->
+ <div id="loader" class="fixed inset-0 bg-black flex items-center justify-center z-50">
+    <div class="loader"></div>
+</div>
 
-    <!-- Loader -->
-    <div id="loader" class="fixed inset-0 bg-black flex items-center justify-center z-50">
-        <div class="loader"></div> 
-    </div> 
+<!-- Main Container -->
+<div class="flex flex-col lg:flex-row h-screen">
 
-<!-- SIDEBAR HEADER -->
-<div class="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-    <a href="index.html">
-      <img src="/assets/logo.png" alt="Logo" />
-    </a>
-  
-    <button
-      class="block lg:hidden"
-      @click.stop="sidebarToggle = !sidebarToggle"
-    >
-      <svg
-        class="fill-current"
-        width="20"
-        height="18"
-        viewBox="0 0 20 18"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M19 8.175H2.98748L9.36248 1.6875C9.69998 1.35 9.69998 0.825 9.36248 0.4875C9.02498 0.15 8.49998 0.15 8.16248 0.4875L0.399976 8.3625C0.0624756 8.7 0.0624756 9.225 0.399976 9.5625L8.16248 17.4375C8.31248 17.5875 8.53748 17.7 8.76248 17.7C8.98748 17.7 9.17498 17.625 9.36248 17.475C9.69998 17.1375 9.69998 16.6125 9.36248 16.275L3.02498 9.8625H19C19.45 9.8625 19.825 9.4875 19.825 9.0375C19.825 8.55 19.45 8.175 19 8.175Z"
-        />
-      </svg>
-    </button>
-  </div>
-  <!-- SIDEBAR HEADER -->
-  
+    <!-- Sidebar (Desktop) -->
+    <div class="hidden lg:block lg:w-1/6 bg-[#0e1014] text-white p-6 text-lg">
+        <div class="mb-8">
+            <a href="#" class="flex items-center space-x-4">
+                <img src="/assets/logo.png" class="w-28 h-auto" alt="Logo">
+            </a>
+        </div>
+        <ul class="space-y-6">
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-brands fa-microsoft"></i> <span>Dashboard</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-wallet"></i> <span>Wallet</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-file-lines"></i> <span>Operations</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-repeat"></i> <span>Crypto OTC</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-shop"></i> <span>My Trades</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-money-bill"></i> <span>Crypto Loan</span></a></li>
+            <hr class="my-6 border-gray-600">
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-sliders"></i> <span>Support</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span></a></li>
+        </ul>
+    </div>
 
-    <script src="/js/main.js"></script>
+    <!-- Navbar (Mobile) -->
+    <div class="lg:hidden">
+        <div class="bg-black shadow-md px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="/assets/logo.png" class="w-24 h-auto" alt="Logo">
+            </div>
+            <button id="menu-toggle" class="text-gray-300 text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
 
+    <!-- Mobile Sidebar -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-3/4 bg-gray-800 text-white p-6 mobile-menu z-50">
+        <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center space-x-4">
+                <img src="/assets/logo.png" class="w-28 h-auto" alt="Logo">
+            </div>
+            <button id="close-menu" class="text-white text-2xl">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <ul class="space-y-6 text-lg text-base">
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-brands fa-microsoft"></i> <span>Dashboard</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-wallet"></i> <span>Wallet</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-file-lines"></i> <span>Operations</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-repeat"></i> <span>Crypto OTC</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-shop"></i> <span>My Trades</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-money-bill"></i> <span>Crypto Loan</span></a></li>
+            <hr class="my-6 border-gray-600">
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-sliders"></i> <span>Support</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span></a></li>
+        </ul>
+    </div>
+
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+        <!-- Navbar -->
+        <div class="bg-[#000] px-4 py-3 flex justify-between items-center text-white">
+            <nav>
+                <ul class="hidden lg:flex space-x-6">
+                    <li><a href="#" class="hover:text-gray-400">Operations</a></li>
+                    <li><a href="#" class="hover:text-gray-400">Exchange orders</a></li>
+                </ul>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button class="px-4 py-2 bg-[#343a40] text-white rounded hover:bg-gray-600">Deposit</button>
+                <button class="px-4 py-2 bg-[#343a40] text-white rounded hover:bg-gray-600">OTC</button>
+                <!-- Toggle Button -->
+                <button id="theme-toggle" class="px-4 py-2 bg-[#343a40] text-white rounded hover:bg-gray-600">
+                    <i class="fa-solid fa-moon" id="theme-icon"></i>
+                </button>
+                <div class="relative">
+                    <button class="px-4 py-2 bg-[#343a40] rounded flex items-center space-x-2 hover:bg-gray-600">
+                        <span>My account</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <!-- Dropdown -->
+                    <div id="account-dropdown" class="absolute right-0 hidden bg-[#343a40] text-white rounded shadow-lg w-48 mt-2">
+                        <ul class="space-y-2 p-2">
+                            <li>
+                                <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded">
+                                    <i class="fa-solid fa-user-cog"></i>
+                                    <span>Account Settings</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded">
+                                    <i class="fa-solid fa-history"></i>
+                                    <span>Activities History</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded">
+                                    <i class="fa-solid fa-sign-out-alt"></i>
+                                    <span>Sign Out</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Responsive Horizontal Rule -->
+        <hr class="border-gray-700 lg:border-gray-500 border-t-2 lg:mx-8 mx-4">
+
+
+            <!-- CONTENT -->
+            <div class="p-4 flex flex-col space-y-8">
+                <!-- Dashboard Section -->
+                <section>
+                    <h4 class="text-2xl font-semibold mb-6">Dashboard</h4>
+                    <div class="bg-[#343a40] text-white rounded-lg p-6 space-y-4 shadow-md">
+                        <p class="text-lg font-medium">Exchange Wallet Balances</p>
+                        <div class="relative inline-block w-full md:w-auto">
+                            <!-- Dropdown Toggle -->
+                            <div class="flex items-center justify-between md:justify-start">
+                                <button id="dropdownToggle" class="flex items-center space-x-2 focus:outline-none">
+                                    <i class="fa-solid fa-caret-down text-gray-400"></i>
+                                    <h2 class="text-3xl font-bold">0.00 BTC</h2>
+                                </button>
+                            </div>
+                            <!-- Dropdown Menu -->
+                            <div id="dropdownMenu" class="hidden absolute mt-2 bg-gray-600 rounded-md shadow-lg w-full md:w-48 z-10">
+                                <ul class="text-white text-sm">
+                                    <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">USD Wallet</li>
+                                    <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">EUR Wallet</li>
+                                    <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">BTC Wallet</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="flex flex-wrap gap-4 mt-4">
+                            <button class="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700 flex items-center space-x-2">
+                                <span>Exchange</span>
+                                <i class="fa-solid fa-right-left"></i>
+                            </button>
+                            <button class="bg-gray-900 text-white px-4 py-2 rounded shadow hover:bg-gray-700 flex items-center space-x-2">
+                                <span>Operations</span>
+                                <i class="fa-solid fa-file-lines"></i>
+                            </button>
+                            <button class="bg-gray-900 text-white px-4 py-2 rounded shadow hover:bg-gray-700 flex items-center space-x-2">
+                                <span>Crypto Loan</span>
+                                <i class="fa-solid fa-repeat"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Overview Section -->
+                <section>
+                    <h3 class="text-xl font-semibold mb-6">Overview</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="bg-[#343a40] text-white rounded-lg p-4 text-center shadow-md">
+                            <p class="text-lg">Active Transactions</p>
+                            <h2 class="text-2xl font-bold">0</h2>
+                        </div>
+                        <div class="bg-[#343a40] text-white rounded-lg p-4 text-center shadow-md">
+                            <p class="text-lg">Completed Trade</p>
+                            <h2 class="text-2xl font-bold">0</h2>
+                        </div>
+                        <div class="bg-[#343a40] text-white rounded-lg p-4 text-center shadow-md">
+                            <p class="text-lg">Deposit Order(s)</p>
+                            <h2 class="text-2xl font-bold">0 <small class="text-gray-400 text-sm font-light">Pending</small></h2>
+                        </div>
+                        <div class="bg-[#343a40] text-white rounded-lg p-4 text-center shadow-md">
+                            <p class="text-lg">Withdrawal Order(s)</p>
+                            <h2 class="text-2xl font-bold">0 <small class="text-gray-400 text-sm font-light">Pending</small></h2>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Transactions Section -->
+                <section>
+                    <h3 class="text-xl font-semibold mb-4">Transactions</h3>
+                    <div class="border-b border-gray-700 mb-6"></div>
+                    <div class="bg-[#343a40] text-white rounded-lg p-6 text-center shadow-md">
+                        <h2 class="text-2xl font-bold">No transactions yet</h2>
+                        <p class="text-gray-400 mt-2">All your transactions will be recorded here. You can start a new exchange now.</p>
+                        <button class="mt-4 bg-white text-black px-6 py-2 rounded shadow hover:bg-white-400">New Order</button>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="text-center mt-8">
+                    <small class="text-gray-400">Pixxodex &copy; 2024</small>
+                </footer>
+            </div>
+
+         
+            <script>
+
+            </script>
+
+
+        </div>
+    </div>
+
+    <script src="/dashboard/script.js"></script>
 </body>
 </html>

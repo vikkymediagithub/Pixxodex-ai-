@@ -69,3 +69,15 @@ html {
 
 
 
+/* Dark Mode */
+.dark-mode {
+  background-color: #1a202c; /* Dark background */
+  color: white; /* Dark text color */
+}
+
+/* Light Mode */
+.light-mode {
+  background-color: #f3f4f6; /* Light background */
+  color: black; /* Light text color */
+}
+
