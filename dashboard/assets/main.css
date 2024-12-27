@@ -48,3 +48,54 @@ body.menu-open {
         font-size: 1.5rem; /* Further increase for desktop */
     }
 }
+
+
+  /* Custom select styling */
+  select {
+    padding-left: 2.5rem; /* Space for the icon */
+}
+
+/* Background and text color for options */
+option {
+    background-color: #2d2d2d; /* Gray background */
+    color: white; /* White text */
+    padding-left: 2.5rem; /* Space for the icon */
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px 20px;
+}
+
+/* Style for the custom dropdown icon */
+select::-ms-expand {
+    display: none; /* Remove default dropdown arrow in IE */
+}
+
+/* Custom icon on the dropdown */
+.relative {
+    position: relative;
+}
+
+  /* Custom select styling */
+  select {
+    padding-left: 2.5rem; /* Space for the icon */
+}
+
+/* Background and text color for options */
+option {
+    background-color: #2d2d2d; /* Gray background */
+    color: white; /* White text */
+    padding-left: 2.5rem; /* Space for the icon */
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px 20px;
+}
+
+/* Style for the custom dropdown icon */
+select::-ms-expand {
+    display: none; /* Remove default dropdown arrow in IE */
+}
+
+/* Custom icon on the dropdown */
+.relative {
+    position: relative;
+}

@@ -73,10 +73,6 @@
     });
     
 
-
-
-
-
     // Script for Dropdown Toggle 
 
     const dropdownToggle = document.getElementById('dropdownToggle');
@@ -92,3 +88,51 @@
             dropdownMenu.classList.add('hidden');
         }
     });
+
+
+
+    function updateCryptoDetails(value) {
+        const selectedOption = document.querySelector(`#ttr option[value="${value}"]`);
+        const cryptoName = selectedOption.dataset.name;
+        const cryptoIcon = selectedOption.dataset.icon;
+    
+        // Update the hidden inputs
+        document.getElementById("ttr-name").value = cryptoName;
+        document.getElementById("ttrValue").placeholder = `${cryptoName.toUpperCase()} 0.00000`;
+    
+        // Change the icon
+        document.getElementById("crypto-icon").src = cryptoIcon;
+    }
+
+    function updateCryptoDetails(value) {
+        const selectedOption = document.querySelector(`#tts option[value="${value}"]`);
+        const cryptoName = selectedOption.dataset.name;
+        const cryptoIcon = selectedOption.dataset.icon;
+
+        // Update the hidden inputs
+        document.getElementById("tts-name").value = cryptoName;
+        document.getElementById("ttsValue").placeholder = `${cryptoName.toUpperCase()} 0.00000`;
+
+        // Change the icon
+        document.getElementById("crypto-icon").src = cryptoIcon;
+    }
+
+
+
+
+
+
+    function switchTab(button, target) {
+        const forms = document.querySelectorAll('.tab');
+        const tabs = document.querySelectorAll('.grid button');
+        
+        // Reset the current tab and form
+        forms.forEach(form => form.classList.add('hidden'));
+        tabs.forEach(tab => tab.classList.remove('bg-gray-700'));
+        
+        // Show the target form
+        document.querySelector(target).classList.remove('hidden');
+        
+        // Highlight the active tab
+        button.classList.add('bg-gray-700');
+    }

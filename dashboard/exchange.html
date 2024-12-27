@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Trade</title>
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/dashboard/assets/main.css">
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body class="bg-[#000] text-gray-100 font-[Anuphan] dark-mode transition-all" id="theme-body">
+
+ <!-- Loader -->
+ <div id="loader" class="fixed inset-0 bg-black flex items-center justify-center z-50">
+    <div class="loader"></div>
+</div>
+
+<!-- Main Container -->
+<div class="flex flex-col lg:flex-row h-screen">
+
+    <!-- Sidebar (Desktop) -->
+    <div class="hidden lg:block lg:w-1/6 bg-[#0e1014] text-white p-6 text-lg  h-auto">
+        <div class="mb-8">
+            <a href="/index.html" class="flex items-center space-x-4">
+                <img src="/assets/logo.png" class="w-28 h-auto" alt="Logo">
+            </a>
+        </div>
+        <ul class="space-y-6">
+            <li><a href="/dashboard/dashboard.html" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-brands fa-microsoft"></i> <span>Dashboard</span></a></li>
+            <li><a href="/dashboard/wallet.html" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-wallet"></i> <span>Wallet</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-file-lines"></i> <span>Operations</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-repeat"></i> <span>Crypto OTC</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-shop"></i> <span>My Trades</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-money-bill"></i> <span>Crypto Loan</span></a></li>
+            <hr class="my-6 border-gray-600">
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-sliders"></i> <span>Support</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span></a></li>
+        </ul>
+    </div>
+
+    <!-- Navbar (Mobile) -->
+    <div class="lg:hidden">
+        <div class="bg-black shadow-md px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="/assets/logo.png" class="w-24 h-auto" alt="Logo">
+            </div>
+            <button id="menu-toggle" class="text-gray-300 text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-3/4 bg-gray-800 text-white p-6 mobile-menu z-50">
+        <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center space-x-4">
+                <img src="/assets/logo.png" class="w-28 h-auto" alt="Logo">
+            </div>
+            <button id="close-menu" class="text-white text-2xl">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <ul class="space-y-6 text-lg text-base">
+            <li><a href="/dashboard/dashboard.html" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-brands fa-microsoft"></i> <span>Dashboard</span></a></li>
+            <li><a href="/dashboard/wallet.html" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-wallet"></i> <span>Wallet</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-file-lines"></i> <span>Operations</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-repeat"></i> <span>Crypto OTC</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-shop"></i> <span>My Trades</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-money-bill"></i> <span>Crypto Loan</span></a></li>
+            <hr class="my-6 border-gray-600">
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-sliders"></i> <span>Support</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span></a></li>
+        </ul>
+    </div>
+
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+        <!-- Navbar -->
+        <div class="bg-[#000] px-4 py-3 flex justify-between items-center text-white">
+            <nav>
+                <ul class="hidden lg:flex space-x-6">
+                    <li><a href="#" class="hover:text-gray-400">Operations</a></li>
+                    <li><a href="#" class="hover:text-gray-400">Exchange orders</a></li>
+                </ul>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button class="px-4 py-2 bg-[#343a40] text-white rounded hover:bg-gray-600">Deposit</button>
+                <button class="px-4 py-2 bg-[#343a40] text-white rounded hover:bg-gray-600">OTC</button>
+                <!-- Toggle Button -->
+                <button id="theme-toggle" class="px-4 py-2 bg-[#343a40] text-white rounded hover:bg-gray-600">
+                    <i class="fa-solid fa-moon" id="theme-icon"></i>
+                </button>
+                <div class="relative">
+                    <button class="px-4 py-2 bg-[#343a40] rounded flex items-center space-x-2 hover:bg-gray-600">
+                        <span>My account</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <!-- Dropdown -->
+                    <div id="account-dropdown" class="absolute right-0 hidden bg-[#343a40] text-white rounded shadow-lg w-48 mt-2">
+                        <ul class="space-y-2 p-2">
+                            <li>
+                                <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded">
+                                    <i class="fa-solid fa-user-cog"></i>
+                                    <span>Account Settings</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded">
+                                    <i class="fa-solid fa-history"></i>
+                                    <span>Activities History</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded">
+                                    <i class="fa-solid fa-sign-out-alt"></i>
+                                    <span>Sign Out</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Responsive Horizontal Rule -->
+        <hr class="border-gray-700 lg:border-gray-500 border-t-2 lg:mx-8 mx-4">
+
+        <div class="px-4 lg:px-16">
+            <h2 class="text-4xl font-semibold mt-6 hidden lg:block">Exchange Crypto</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+                <!-- Left side: Form -->
+                <div>
+                    <div class="p-4 bg-gray-900 rounded-lg">
+                        <div class="grid grid-cols-2 gap-2">
+                            <button class="py-3 px-6 text-lg font-medium bg-gray-700 text-white rounded focus:outline-none" onclick="switchTab(this, '.n-order')">New Order</button>
+                            <button class="py-3 px-6 text-lg font-medium text-white rounded focus:outline-none" onclick="switchTab(this, '.j-order')">Join Exchange Portal</button>
+                        </div>
+                    </div>
+        
+                    <!-- New Order Form -->
+                    <form action="/escrow/create-escrow" class="mt-6 p-6 rounded-lg shadow-md n-order tab transition-transform duration-500 ease-in-out transform" id="createEscrowForm" method="POST">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="MpjkJt3o55YnsG0dUHVVgmzz4vMrdusAdlXu6emjobe3V1YqDrvilfIFcbVYPZi9">
+        
+                        <label class="block text-xl font-medium text-white">Amount of Coins to be Sent</label>
+                        <div class="mt-2 border border-gray-600 rounded-lg overflow-hidden">
+                            <div class="grid grid-cols-5 items-center">
+                                <div class="col-span-2 border-r py-3 px-6 flex items-center">
+                                    <!-- Custom Dropdown -->
+                                    <div class="relative w-full">
+                                        <select id="tts" name="tts" class="w-full bg-transparent text-xl focus:outline-none appearance-none pl-12 pr-3 py-3" onchange="updateCryptoDetails(this.value)">
+                                            <option value="btc" data-name="bitcoin" data-icon="https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/color/btc.svg">
+                                                <img src="https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/color/btc.svg" alt="BTC" class="w-8 h-8 inline-block mr-3"> BTC
+                                            </option>
+                                            <option value="eth" data-name="ethereum" data-icon="https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/color/eth.svg">
+                                                <img src="https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/color/eth.svg" alt="ETH" class="w-8 h-8 inline-block mr-3"> ETH
+                                            </option>
+                                            <option value="ltc" data-name="litecoin" data-icon="https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/color/ltc.svg">
+                                                <img src="https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/color/ltc.svg" alt="LTC" class="w-8 h-8 inline-block mr-3"> LTC
+                                            </option>
+                                        </select>
+                                        <div class="absolute left-2 top-1/2 transform -translate-y-1/2">
+                                            <img id="crypto-icon" src="https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/color/btc.svg" alt="Crypto Icon" class="w-8 h-8">
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="col-span-3 py-3 px-6">
+                                    <input type="number" name="base-amount" class="w-full text-right text-2xl bg-transparent focus:outline-none" id="ttsValue" placeholder="BTC 0.00000" step="any" required>
+                                    <input type="hidden" name="tts-name" id="tts-name" value="bitcoin">
+                                    <input type="hidden" name="base-amount-fee" id="base-amount-fee">
+                                </div>
+                            </div>
+                        </div>
+        
+                        <p class="text-gray-400 py-3 text-lg">Available: BTC 0.00</p>
+        
+                        <!-- You Get -->
+                        <label class="block text-xl font-medium text-white mt-6">Input the amount of coins to be received</label>
+                        <div class="mt-2 border border-gray-600 rounded-lg overflow-hidden">
+                            <div class="grid grid-cols-5 items-center">
+                                <div class="col-span-2 border-r py-3 px-6 flex items-center">
+                                    <div class="relative w-full">
+                                        <select id="ttr" name="ttr" class="w-full bg-transparent text-xl focus:outline-none appearance-none pl-12 pr-3 py-3" onchange="updateCryptoDetails(this.value)">
+                                            <option value="dot" data-name="polkadot" data-icon="https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/color/dot.svg">
+                                                <img src="https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/color/dot.svg" alt="DOT" class="w-8 h-8 inline-block mr-3"> DOT
+                                            </option>
+                                            <option value="btc" data-name="bitcoin" data-icon="https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/color/btc.svg">
+                                                <img src="https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/color/btc.svg" alt="BTC" class="w-8 h-8 inline-block mr-3"> BTC
+                                            </option>
+                                            <option value="eth" data-name="ethereum" data-icon="https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/color/eth.svg">
+                                                <img src="https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/color/eth.svg" alt="ETH" class="w-8 h-8 inline-block mr-3"> ETH
+                                            </option>
+                                        </select>
+                                        <div class="absolute left-2 top-1/2 transform -translate-y-1/2">
+                                            <img id="crypto-icon" src="https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/color/dot.svg" alt="Crypto Icon" class="w-8 h-8">
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="col-span-3 py-3 px-6">
+                                    <input type="number" name="exchange-amount" class="w-full text-right text-2xl bg-transparent focus:outline-none" id="ttrValue" placeholder="DOT 0.00000" step="any" required>
+                                    <input type="hidden" name="ttr-name" id="ttr-name" value="polkadot">
+                                    <input type="hidden" name="exchange-amount-fee" id="exchange-amount-fee">
+                                    <input type="hidden" step="any" id="escrow-fee" name="escrow-fee">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 py-3 text-lg">Available: DOT 0.00</p>
+                        <button type="submit" class="w-full py-3 px-6 bg-green-500 text-white text-xl mt-6">Exchange</button>
+                    </form>
+        
+                    <!-- Join Exchange Portal Form -->
+                    <form class="mt-6 p-6 rounded-lg shadow-md j-order tab hidden transition-transform duration-500 ease-in-out transform">
+                        <label class="block font-medium text-gray-400">Enter the Exchange ID to join</label>
+                        <input type="text" class="w-full text-xl bg-transparent text-gray-900 border border-gray-800 rounded-lg mt-2 py-2 px-4" placeholder="Enter Exchange ID">
+        
+                        <button type="submit" class="w-full py-3 px-6 bg-green-500 text-white text-sm mt-6">Join exchange portal</button>
+                    </form>
+                </div>
+        
+                <!-- Right side: Exchange Rate Information (Visible on all screen sizes) -->
+                <div class="lg:pl-5 lg:block sm:mt-6">
+                    <div class="p-4 bg-gray-900 text-white rounded-lg">
+                        <p class="m-0 mt-2">
+                            Exchange rate fluctuation will not affect escrow amounts during exchange. Once created, exchange values are fixed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+
+       
+
+        
+    <script src="/dashboard/assets/script.js"></script>
+</body>
+</html>
