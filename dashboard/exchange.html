@@ -96,7 +96,7 @@
                 </button>
                 <div class="relative">
                     <button class="px-4 py-2 bg-[#343a40] rounded flex items-center space-x-2 hover:bg-gray-600">
-                        <span>My account</span>
+                        <span>Account</span>
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <!-- Dropdown -->
@@ -131,7 +131,7 @@
 
         <div class="px-4 lg:px-16">
             <h2 class="text-4xl font-semibold mt-6 hidden lg:block">Exchange Crypto</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+            <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                 <!-- Left side: Form -->
                 <div>
                     <div class="p-4 bg-gray-900 rounded-lg">
@@ -145,7 +145,7 @@
                     <form action="/escrow/create-escrow" class="mt-6 p-6 rounded-lg shadow-md n-order tab transition-transform duration-500 ease-in-out transform" id="createEscrowForm" method="POST">
                         <input type="hidden" name="csrfmiddlewaretoken" value="MpjkJt3o55YnsG0dUHVVgmzz4vMrdusAdlXu6emjobe3V1YqDrvilfIFcbVYPZi9">
         
-                        <label class="block text-xl font-medium text-white">Amount of Coins to be Sent</label>
+                        <label class="block text-xl font-medium text-white mb-2">Amount of Coins to be Sent</label>
                         <div class="mt-2 border border-gray-600 rounded-lg overflow-hidden">
                             <div class="grid grid-cols-5 items-center">
                                 <div class="col-span-2 border-r py-3 px-6 flex items-center">
@@ -179,7 +179,7 @@
                         <p class="text-gray-400 py-3 text-lg">Available: BTC 0.00</p>
         
                         <!-- You Get -->
-                        <label class="block text-xl font-medium text-white mt-6">Input the amount of coins to be received</label>
+                        <label class="block text-xl font-medium text-white mt-6 mb-2">Input the amount of coins to be received</label>
                         <div class="mt-2 border border-gray-600 rounded-lg overflow-hidden">
                             <div class="grid grid-cols-5 items-center">
                                 <div class="col-span-2 border-r py-3 px-6 flex items-center">
@@ -225,13 +225,15 @@
                 <!-- Right side: Exchange Rate Information (Visible on all screen sizes) -->
                 <div class="lg:pl-5 lg:block sm:mt-6">
                     <div class="p-4 bg-gray-900 text-white rounded-lg">
-                        <p class="m-0 mt-2">
+                        <p class="m-0 mt-2 text-xs sm:text-base md:text-lg">
                             Exchange rate fluctuation will not affect escrow amounts during exchange. Once created, exchange values are fixed.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
+        
+        
         
         
         
