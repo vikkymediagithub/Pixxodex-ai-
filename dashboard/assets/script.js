@@ -12,7 +12,7 @@
         loader.style.display = 'none'; // Hide the loader
     });
 
-    // Mobile Menu
+    // // Mobile Menu
     const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
     const closeMenu = document.getElementById("close-menu");
@@ -27,7 +27,7 @@
         mobileMenu.classList.remove("active");
     });
 
-    // Dark/Light Mode Toggle
+    // // Dark/Light Mode Toggle
     const themeToggle = document.getElementById("theme-toggle");
     const themeIcon = document.getElementById("theme-icon");
     const themeBody = document.getElementById("theme-body");
@@ -57,7 +57,7 @@
         }
     });
 
-    // Account Dropdown
+    // // Account Dropdown
     const accountButton = document.querySelector("button.flex.items-center");
     const accountDropdown = document.getElementById("account-dropdown");
 
@@ -136,3 +136,7 @@
         // Highlight the active tab
         button.classList.add('bg-gray-700');
     }
+
+
+
+

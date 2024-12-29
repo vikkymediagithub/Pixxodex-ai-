@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/dashboard/assets/main.css">
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body class="bg-[#000] text-gray-100 font-[Anuphan] dark-mode transition-all" id="theme-body">
+
+ <!-- Loader -->
+ <div id="loader" class="fixed inset-0 bg-black flex items-center justify-center z-50">
+    <div class="loader"></div>
+</div>
+
+<!-- Main Container -->
+<div class="flex flex-col lg:flex-row h-screen">
+
+    <!-- Sidebar (Desktop) -->
+    <div class="hidden lg:block lg:w-1/6 bg-[#0e1014] text-white p-6 text-lg  h-auto">
+        <div class="mb-8">
+            <a href="/index.html" class="flex items-center space-x-4">
+                <img src="/assets/logo.png" class="w-28 h-auto" alt="Logo">
+            </a>
+        </div>
+        <ul class="space-y-6">
+            <li><a href="/dashboard/dashboard.html" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-brands fa-microsoft"></i> <span>Dashboard</span></a></li>
+            <li><a href="/dashboard/my-account.html" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-wallet"></i> <span>My Account</span></a></li>
+            <li><a href="/dashboard/wallet.html" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-wallet"></i> <span>Wallet</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-file-lines"></i> <span>Operations</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-repeat"></i> <span>Crypto OTC</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-shop"></i> <span>My Trades</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-money-bill"></i> <span>Crypto Loan</span></a></li>
+            <hr class="my-6 border-gray-600">
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-sliders"></i> <span>Support</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400 text-xl text-base"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span></a></li>
+        </ul>
+    </div>
+
+    <!-- Navbar (Mobile) -->
+    <div class="lg:hidden">
+        <div class="bg-black shadow-md px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+              <a href="/index.html" class="flex items-center space-x-4">
+                <img src="/assets/logo.png" class="w-28 h-auto" alt="Logo">
+            </a>
+            </div>
+            <button id="menu-toggle" class="text-gray-300 text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-3/4 bg-gray-800 text-white p-6 mobile-menu z-50">
+        <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center space-x-4">
+              <a href="/index.html" class="flex items-center space-x-4">
+                <img src="/assets/logo.png" class="w-28 h-auto" alt="Logo">
+            </a>
+            </div>
+            <button id="close-menu" class="text-white text-2xl">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <ul class="space-y-6 text-lg text-base">
+            <li><a href="/dashboard/dashboard.html" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-brands fa-microsoft"></i> <span>Dashboard</span></a></li>
+            <li><a href="/dashboard/wallet.html" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-wallet"></i> <span>Wallet</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-file-lines"></i> <span>Operations</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-repeat"></i> <span>Crypto OTC</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-shop"></i> <span>My Trades</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-money-bill"></i> <span>Crypto Loan</span></a></li>
+            <hr class="my-6 border-gray-600">
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-sliders"></i> <span>Support</span></a></li>
+            <li><a href="#" class="flex items-center space-x-4 hover:text-gray-400"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span></a></li>
+        </ul>
+    </div>
+
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+        <!-- Navbar -->
+        <div class="bg-[#000] px-4 py-3 flex justify-between items-center text-white">
+            <nav>
+                <ul class="hidden lg:flex space-x-6">
+                    <li><a href="#" class="hover:text-gray-400">Operations</a></li>
+                    <li><a href="#" class="hover:text-gray-400">Exchange orders</a></li>
+                </ul>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button class="px-4 py-2 bg-[#343a40] text-white rounded hover:bg-gray-600">Deposit</button>
+                <button class="px-4 py-2 bg-[#343a40] text-white rounded hover:bg-gray-600">OTC</button>
+                <!-- Toggle Button -->
+                <button id="theme-toggle" class="px-4 py-2 bg-[#343a40] text-white rounded hover:bg-gray-600">
+                    <i class="fa-solid fa-moon" id="theme-icon"></i>
+                </button>
+                <div class="relative">
+                    <button class="px-4 py-2 bg-[#343a40] rounded flex items-center space-x-2 hover:bg-gray-600">
+                        <span>Account</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <!-- Dropdown -->
+                    <div id="account-dropdown" class="absolute right-0 hidden bg-[#343a40] text-white rounded shadow-lg w-48 mt-2">
+                        <ul class="space-y-2 p-2">
+                            <li>
+                                <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded">
+                                    <i class="fa-solid fa-user-cog"></i>
+                                    <span>Account Settings</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded">
+                                    <i class="fa-solid fa-history"></i>
+                                    <span>Activities History</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded">
+                                    <i class="fa-solid fa-sign-out-alt"></i>
+                                    <span>Sign Out</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Responsive Horizontal Rule -->
+        <hr class="border-gray-700 lg:border-gray-500 border-t-2 lg:mx-8 mx-4">
+
+        <!-- This is a user profile page section -->
+        <section id="main-content" class="p-4 w-full">
+            <div class="container mx-auto bg-[#000] shadow-lg rounded-lg p-6">
+          
+              <!-- Page Title and Breadcrumb -->
+              <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                <h1 class="text-3xl md:text-4xl font-semibold mb-4 md:mb-0 text-light">User Profile</h1>
+                <nav class="text-base">
+                  <ol class="list-reset flex space-x-2">
+                    <li>
+                      <a href="/index.html" class="hover:underline text-green-400"><i class="fa fa-home"></i> Home</a>
+                    </li>
+                    <li>/</li>
+                    <li class="font-semibold text-light">User Profile</li>
+                  </ol>
+                </nav>
+              </div>
+          
+              <!-- Main Content -->
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+                <!-- Profile Picture Section -->
+                <div class="bg-[#343a40] rounded-lg shadow-lg p-6">
+                  <div class="flex flex-col items-center">
+                    <img src="/assets/pixodex-ui-show.png" alt="Profile" class="w-32 h-32 rounded-full object-cover mb-4 shadow">
+                    <h3 class="text-2xl font-medium text-white">Manu Pass</h3>
+                    <p class="text-gray-400">cubanaryder@gmail.com</p>
+                    <span class="mt-2 text-green-400 font-semibold">● Online</span>
+                  </div>
+                </div>
+          
+                <!-- Personal Information Section -->
+                <div class="lg:col-span-2 bg-[#343a40] rounded-lg shadow-lg p-6">
+                  <h2 class="text-2xl font-semibold mb-4 text-white">Personal Information</h2>
+                  <form action="" method="post" enctype="multipart/form-data" class="space-y-6">
+                    <input type="hidden" name="_token" value="GtzOTIwJR0L8bwvYco2UXBWmbiT9shgpKd7z5pUd">
+          
+                    <!-- Profile Picture -->
+                    <div>
+                      <label for="file" class="block text-lg font-medium text-gray-300">Profile Picture</label>
+                      <input type="file" id="file" name="file" class="mt-1 w-full border border-gray-600 rounded p-3 bg-gray-500 text-gray-300">
+                    </div>
+          
+                    <!-- First Name -->
+                    <div>
+                      <label for="firstname" class="block text-lg font-medium text-gray-300">First Name</label>
+                      <input type="text" id="firstname" name="firstname" placeholder="manu" value="manu" class="mt-1 w-full border border-gray-600 rounded p-3 bg-gray-700 text-gray-300">
+                    </div>
+          
+                    <!-- Last Name -->
+                    <div>
+                      <label for="lastname" class="block text-lg font-medium text-gray-300">Last Name</label>
+                      <input type="text" id="lastname" name="lastname" placeholder="pass" value="pass" class="mt-1 w-full border border-gray-600 rounded p-3 bg-gray-700 text-gray-300">
+                    </div>
+          
+                    <!-- Email Address -->
+                    <div>
+                      <label for="email" class="block text-lg font-medium text-gray-300">Email Address</label>
+                      <input type="email" id="email" name="email" value="cubanaryder@gmail.com" disabled class="mt-1 w-full border border-gray-600 rounded p-3 bg-gray-700 text-gray-300">
+                    </div>
+          
+                    <!-- Username -->
+                    <div>
+                      <label for="username" class="block text-lg font-medium text-gray-300">Username</label>
+                      <input type="text" id="username" name="usertname" value="ryder" disabled class="mt-1 w-full border border-gray-600 rounded p-3 bg-gray-700 text-gray-300">
+                    </div>
+          
+                    <!-- Phone Number -->
+                    <div>
+                      <label for="phone" class="block text-lg font-medium text-gray-300">Phone Number</label>
+                      <input type="tel" id="phone" name="phone" placeholder="" class="mt-1 w-full border border-gray-600 rounded p-3 bg-gray-700 text-gray-300">
+                    </div>
+          
+                    <!-- Save Button -->
+                    <div class="flex justify-end">
+                      <button type="submit" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded text-lg shadow">Save</button>
+                    </div>
+                  </form>
+                </div>
+          
+                <!-- Security Information Section -->
+                <div class="lg:col-span-3 bg-[#343a40] rounded-lg shadow-lg p-6">
+                  <h2 class="text-2xl font-semibold mb-4 text-white">Security Information</h2>
+                  <form action="" method="post" class="space-y-6">
+                    <input type="hidden" name="_token" value="GtzOTIwJR0L8bwvYco2UXBWmbiT9shgpKd7z5pUd">
+          
+                    <!-- Old Password -->
+                    <div>
+                      <label for="current_password" class="block text-lg font-medium text-gray-300">Old Password</label>
+                      <input type="password" id="current_password" name="current_password" placeholder="**********" class="mt-1 w-full border border-gray-600 rounded p-3 bg-gray-500 text-gray-300">
+                    </div>
+          
+                    <!-- New Password -->
+                    <div>
+                      <label for="password" class="block text-lg font-medium text-gray-300">New Password</label>
+                      <input type="password" id="password" name="password" placeholder="**********" class="mt-1 w-full border border-gray-600 rounded p-3 bg-gray-700 text-gray-300">
+                    </div>
+          
+                    <!-- Confirm Password -->
+                    <div>
+                      <label for="password_confirmation" class="block text-lg font-medium text-gray-300">Confirm Password</label>
+                      <input type="password" id="password_confirmation" name="password_confirmation" placeholder="**********" class="mt-1 w-full border border-gray-600 rounded p-3 bg-gray-700 text-gray-300">
+                    </div>
+          
+                    <!-- Save Button -->
+                    <div class="flex justify-end">
+                      <button type="submit" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded text-lg shadow">Save</button>
+                    </div>
+                  </form>
+                </div>
+          
+              </div>
+            </div>
+        </section>
+          
+
+        </div>
+    </div>
+
+    <script src="/dashboard/assets/script.js"></script>
+</body>
+</html>
