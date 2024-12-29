@@ -121,7 +121,6 @@
 
 
 
-
     function switchTab(button, target) {
         const forms = document.querySelectorAll('.tab');
         const tabs = document.querySelectorAll('.grid button');
