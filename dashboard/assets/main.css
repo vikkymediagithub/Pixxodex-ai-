@@ -1,38 +1,6 @@
-.mobile-menu {
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-}
-
-.mobile-menu.active {
-    transform: translateX(0);
-}
-
+/* General Styles */
 body.menu-open {
     overflow: hidden;
-}
-
-.loader {
-    border: 6px solid #000000;
-    border-top: 6px solid #ffffff;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.dark-mode {
-    background-color: #1a202c;
-    color: white;
-}
-
-.light-mode {
-    background-color: #f3f4f6;
-    color: black;
 }
 
 .transition-all {
@@ -49,13 +17,61 @@ body.menu-open {
     }
 }
 
+/* Loader Styles */
+.loader {
+    border: 6px solid #000000;
+    border-top: 6px solid #ffffff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
 
-  /* Custom select styling */
-  select {
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Dark and Light Mode Styles */
+.dark-mode {
+    background-color: #1a202c;
+    color: white;
+}
+
+.light-mode {
+    background-color: #f3f4f6;
+    color: black;
+}
+
+
+/* Sliding Navigation Styles */
+#sliding-nav {
+    transition: transform 0.3s ease-in-out;
+}
+
+#sliding-nav.active {
+    transform: translateX(0);
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+/* Custom Select Styling */
+select {
     padding-left: 2.5rem; /* Space for the icon */
 }
 
-/* Background and text color for options */
 option {
     background-color: #2d2d2d; /* Gray background */
     color: white; /* White text */
@@ -65,37 +81,10 @@ option {
     background-size: 20px 20px;
 }
 
-/* Style for the custom dropdown icon */
 select::-ms-expand {
     display: none; /* Remove default dropdown arrow in IE */
 }
 
-/* Custom icon on the dropdown */
-.relative {
-    position: relative;
-}
-
-  /* Custom select styling */
-  select {
-    padding-left: 2.5rem; /* Space for the icon */
-}
-
-/* Background and text color for options */
-option {
-    background-color: #2d2d2d; /* Gray background */
-    color: white; /* White text */
-    padding-left: 2.5rem; /* Space for the icon */
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 20px 20px;
-}
-
-/* Style for the custom dropdown icon */
-select::-ms-expand {
-    display: none; /* Remove default dropdown arrow in IE */
-}
-
-/* Custom icon on the dropdown */
 .relative {
     position: relative;
 }
