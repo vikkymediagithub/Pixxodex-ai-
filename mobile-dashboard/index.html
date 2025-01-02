@@ -269,33 +269,25 @@
      
       <div class="flex flex-col flex-1 w-full">
         <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
-          <div class="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
+          <div class="container flex items-center justify-between h-full px-4 sm:px-6 mx-auto text-purple-600 dark:text-purple-300">
             <!-- Left Side: Logo and Links -->
             <div class="flex items-center justify-between w-full md:w-auto">
               <!-- Mobile View: Only show logo -->
-              <div class="md:hidden flex items-center justify-start">
-                <img src="/mobile-dashboard/assets/img/logo.png" alt="Logo" class="w-16 h-16" />
+              <div class="flex items-center justify-center md:hidden py-2">
+                <img src="/mobile-dashboard/assets/img/logo.png" 
+                     alt="Logo" 
+                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain" />
               </div>
         
               <!-- Desktop View: Links -->
-              <div class="hidden md:flex gap-20 flex-grow justify-start">
+              <div class="hidden md:flex gap-10 flex-grow justify-start">
                 <a href="#" class="text-lg text-[#151515] dark:text-gray-200">Operations</a>
                 <a href="#" class="text-lg text-[#151515] dark:text-gray-200">Exchange Order</a>
               </div>
             </div>
         
-            <!-- Right Side: Deposit, OTC, Dark Mode, Profile -->
-            <ul class="flex items-center flex-shrink-0 space-x-6">
-              <!-- Desktop View: Deposit and OTC Buttons -->
-              <div class="hidden md:flex items-center space-x-4">
-                <button class="text-lg bg-gray-300 text-[#151515] dark:bg-gray-700 dark:text-gray-200 rounded px-4 py-2">
-                  Deposit
-                </button>
-                <button class="text-lg bg-gray-300 text-[#151515] dark:bg-gray-700 dark:text-gray-200 rounded px-4 py-2">
-                  OTC
-                </button>
-              </div>
-        
+            <!-- Right Side: Buttons, Dark Mode, Profile -->
+            <ul class="flex items-center flex-shrink-0 space-x-4">
               <!-- Dark Mode Toggler -->
               <li class="flex">
                 <button
@@ -305,7 +297,7 @@
                 >
                   <template x-if="!dark">
                     <svg
-                      class="w-8 h-8 text-gray-800 dark:text-gray-200"
+                      class="w-6 h-6 text-gray-800 dark:text-gray-200"
                       aria-hidden="true"
                       fill="currentColor"
                       viewBox="0 0 20 20"
@@ -315,7 +307,7 @@
                   </template>
                   <template x-if="dark">
                     <svg
-                      class="w-8 h-8 text-gray-800 dark:text-gray-200"
+                      class="w-6 h-6 text-gray-800 dark:text-gray-200"
                       aria-hidden="true"
                       fill="currentColor"
                       viewBox="0 0 20 20"
@@ -329,7 +321,6 @@
                   </template>
                 </button>
               </li>
-
         
               <!-- Profile menu -->
               <li class="relative" x-data="{ isProfileMenuOpen: false }">
@@ -353,76 +344,34 @@
                   x-transition:leave="transition ease-in duration-150"
                   x-transition:leave-start="opacity-100 transform translate-y-0"
                   x-transition:leave-end="opacity-0 transform -translate-y-4"
-                  class="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg dark:bg-gray-700"
+                  class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg dark:bg-gray-700"
                 >
                   <a
                     href="#"
-                    class="flex items-center px-4 py-3 text-lg font-semibold text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    class="block px-4 py-2 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
-                    <svg
-                      class="w-6 h-6 mr-3"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5.121 17.804A1 1 0 014 17V7a1 1 0 011.707-.707l6.085 6.085a1 1 0 001.414 0l6.085-6.085A1 1 0 0120 7v10a1 1 0 01-1.707.707l-6.085-6.085a1 1 0 00-1.414 0L5.707 17.804z"
-                      />
-                    </svg>
                     Account Settings
                   </a>
                   <a
                     href="#"
-                    class="flex items-center px-4 py-3 text-lg font-semibold text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    class="block px-4 py-2 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
-                    <svg
-                      class="w-6 h-6 mr-3"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M8 16l4-4-4-4m8 8l-4-4 4-4"
-                      />
-                    </svg>
                     Activity History
                   </a>
                   <a
                     href="#"
-                    class="flex items-center px-4 py-3 text-lg font-semibold text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    class="block px-4 py-2 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
-                    <svg
-                      class="w-6 h-6 mr-3"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M17 16l-4-4m0 0l-4-4m4 4h12"
-                      />
-                    </svg>
                     Sign Out
                   </a>
                 </div>
               </li>
-
+        
               <!-- Mobile Menu Button -->
               <li class="md:hidden flex items-center">
                 <button
                   @click="isSideMenuOpen = !isSideMenuOpen"
-                  class="p-1 mr-5 -ml-1 rounded-md focus:outline-none focus:shadow-outline-purple"
+                  class="p-1 -ml-1 rounded-md focus:outline-none focus:shadow-outline-purple"
                   aria-label="Menu"
                 >
                   <svg
@@ -439,11 +388,11 @@
                   </svg>
                 </button>
               </li>
-
-
             </ul>
           </div>
         </header>
+        
+        
         <!-- Right Sliding Sidebar -->
         <div
           x-show="isSideMenuOpen"
@@ -704,119 +653,115 @@
           </div>
         </div>
 
-        <!-- main content -->
-        <main class="h-full overflow-y-auto">
-          <div class="container px-6 mx-auto grid">
+        <!-- Main Content -->
+        <main class="h-full overflow-y-auto bg-gray-50 dark:bg-gray-800">
+          <div class="container px-4 sm:px-6 mx-auto grid">
             <!-- Dashboard Header -->
-            <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+            <h2 class="my-6 text-xl sm:text-2xl font-semibold text-gray-700 dark:text-gray-200">
               Dashboard
             </h2>
-        
+
             <div class="p-4 flex flex-col space-y-8">
               <!-- Dashboard Section -->
-              <div class=" rounded-3xl p-6 space-y-4 shadow-md bg-gray-100 text-[#151515] dark:bg-gray-700 dark:text-gray-200">
+              <div class="rounded-3xl p-6 space-y-4 shadow-md bg-gray-100 text-[#151515] dark:bg-gray-700 dark:text-gray-200">
                 <p class="text-sm font-medium text-gray-700 dark:text-gray-200">Exchange Wallet Balances</p>
-                
+
                 <!-- Dropdown Section -->
-                <div class="relative inline-block w-full md:w-auto">
-                  <div class="flex items-center justify-between md:justify-start">
+                <div class="relative inline-block w-full">
+                  <div class="flex items-center justify-between">
                     <button
                       id="dropdownToggle"
                       class="flex items-center space-x-2 focus:outline-none"
                       aria-label="Dropdown Toggle"
                     >
-                      <h2 class="text-3xl font-bold text-gray-700 dark:text-gray-200">0.00 BTC</h2>
+                      <h2 class="text-2xl sm:text-3xl font-bold text-gray-700 dark:text-gray-200">0.00 BTC</h2>
                     </button>
                   </div>
                 </div>
-                
+
                 <!-- Buttons Section -->
-                <div class="grid grid-cols-2 gap-4 mt-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                   <!-- Exchange Button -->
-                  <a href="/mobile-dashboard/withdrawal.html" class="flex items-center justify-center">
+                  <a href="/mobile-dashboard/withdrawal.html" class="w-full">
                     <button
-                      class="w-full bg-green-600 text-white dark:text-gray-200 px-4 py-3 sm:px-6 sm:py-4 rounded-xl shadow flex items-center justify-between text-base sm:text-lg hover:bg-green-500 transition-all duration-300"
+                      class="w-full bg-green-600 text-white px-4 py-3 rounded-xl shadow flex items-center justify-between text-base sm:text-lg hover:bg-green-500 transition-all duration-300"
                       aria-label="Exchange"
                     >
-                      <span class="text-lg">Exchange</span>
+                      <span>Exchange</span>
                       <i class="fa-solid fa-right-left bg-white text-green-600 p-2 rounded-full"></i>
                     </button>
                   </a>
                   <!-- Deposit Button -->
-                  <div class="flex items-center justify-center">
-                    <button
-                      class="w-full bg-gray-300 text-[#151515] dark:bg-gray-800 dark:text-gray-200 px-4 py-3 sm:px-6 sm:py-4 rounded-xl shadow flex items-center justify-between text-base sm:text-lg hover:bg-gray-700 transition-all duration-300"
-                      aria-label="Operations"
-                    >
-                      <span class="text-lg">Deposit</span>
-                      <i class="fa-solid fa-file-lines bg-gray-300 text-[#151515] dark:bg-gray-700 dark:text-gray-200 p-2 rounded-full"></i>
-                    </button>
-                  </div>
+                  <button
+                    class="w-full bg-gray-300 text-[#151515] dark:bg-gray-800 dark:text-gray-200 px-4 py-3 rounded-xl shadow flex items-center justify-between text-base sm:text-lg hover:bg-gray-700 transition-all duration-300"
+                    aria-label="Deposit"
+                  >
+                    <span>Deposit</span>
+                    <i class="fa-solid fa-file-lines bg-gray-300 text-[#151515] dark:bg-gray-700 dark:text-gray-200 p-2 rounded-full"></i>
+                  </button>
                   <!-- Crypto Loan Button -->
-                  <div class="flex items-center justify-center">
-                    <button
-                      class="w-full bg-gray-300 text-[#151515] dark:bg-gray-800 dark:text-gray-200 px-4 py-3 sm:px-6 sm:py-4 rounded-xl shadow flex items-center justify-between text-base sm:text-lg hover:bg-gray-700 transition-all duration-300"
-                      aria-label="Crypto Loan"
-                    >
-                      <span class="text-lg">Operations</span>
-                      <i class="fa-solid fa-repeat bg-gray-300 text-[#151515] dark:bg-gray-800 dark:text-gray-200 p-2 rounded-full"></i>
-                    </button>
-                  </div>
+                  <button
+                    class="w-full bg-gray-300 text-[#151515] dark:bg-gray-800 dark:text-gray-200 px-4 py-3 rounded-xl shadow flex items-center justify-between text-base sm:text-lg hover:bg-gray-700 transition-all duration-300"
+                    aria-label="Crypto Loan"
+                  >
+                    <span>Operations</span>
+                    <i class="fa-solid fa-repeat bg-gray-300 text-[#151515] dark:bg-gray-800 dark:text-gray-200 p-2 rounded-full"></i>
+                  </button>
                   <!-- More Button -->
-                  <div class="flex items-center justify-center">
-                    <button
-                      class="w-full bg-gray-300 text-[#151515] dark:bg-gray-800 dark:text-gray-200 px-4 py-3 sm:px-6 sm:py-4 rounded-xl shadow flex items-center justify-between text-base sm:text-lg hover:bg-gray-700 transition-all duration-300"
-                      aria-label="More"
-                    >
-                      <span class="text-lg">More...</span>
-                      <i class="fa-solid fa-repeat bg-gray-300 text-[#151515] dark:bg-gray-800 dark:text-gray-200 p-2 rounded-full"></i>
-                    </button>
-                  </div>
+                  <button
+                    class="w-full bg-gray-300 text-[#151515] dark:bg-gray-800 dark:text-gray-200 px-4 py-3 rounded-xl shadow flex items-center justify-between text-base sm:text-lg hover:bg-gray-700 transition-all duration-300"
+                    aria-label="More"
+                  >
+                    <span>More...</span>
+                    <i class="fa-solid fa-repeat bg-gray-300 text-[#151515] dark:bg-gray-800 dark:text-gray-200 p-2 rounded-full"></i>
+                  </button>
                 </div>
               </div>
+
               <!-- Overview Section -->
               <section>
-                <h3 class="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-200">
-                  Overview
-                </h3>
-                <div class="grid grid-cols-2 gap-4">
+                <h3 class="text-lg sm:text-xl font-semibold mb-4 text-gray-700 dark:text-gray-200">Overview</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div class="bg-gray-300 text-[#151515] dark:bg-gray-700 dark:text-gray-200 rounded-lg p-4 text-center shadow">
-                    <p class="text-lg">Active Transactions</p>
-                    <h2 class="text-2xl font-bold">0</h2>
+                    <p class="text-sm sm:text-lg">Active Transactions</p>
+                    <h2 class="text-xl sm:text-2xl font-bold">0</h2>
                   </div>
                   <div class="bg-gray-300 text-[#151515] dark:bg-gray-700 dark:text-gray-200 rounded-lg p-4 text-center shadow">
-                    <p class="text-lg">Completed Trade</p>
-                    <h2 class="text-2xl font-bold">0</h2>
+                    <p class="text-sm sm:text-lg">Completed Trade</p>
+                    <h2 class="text-xl sm:text-2xl font-bold">0</h2>
                   </div>
                   <div class="bg-gray-300 text-[#151515] dark:bg-gray-700 dark:text-gray-200 rounded-lg p-4 text-center shadow">
-                    <p class="text-lg">Deposit Order(s)</p>
-                    <h2 class="text-2xl font-bold">0 pending</h2>
+                    <p class="text-sm sm:text-lg">Deposit Order(s)</p>
+                    <h2 class="text-xl sm:text-2xl font-bold">0 pending</h2>
                   </div>
                   <div class="bg-gray-300 text-[#151515] dark:bg-gray-700 dark:text-gray-200 rounded-lg p-4 text-center shadow">
-                    <p class="text-lg">Withdrawal Order(s)</p>
-                    <h2 class="text-2xl font-bold">0 pending</h2>
+                    <p class="text-sm sm:text-lg">Withdrawal Order(s)</p>
+                    <h2 class="text-xl sm:text-2xl font-bold">0 pending</h2>
                   </div>
                 </div>
               </section>
 
-               <!-- Transactions Section -->
-               <section>
-                <h3 class="text-xl font-semibold mb-4 text-[#151515] dark:text-gray-200">Transactions</h3>
-                <div class="border-b border-gray-700 mb-6"></div>
+              <!-- Transactions Section -->
+              <section>
+                <h3 class="text-lg sm:text-xl font-semibold mb-4 text-gray-700 dark:text-gray-200">Transactions</h3>
+                <div class="border-b border-gray-300 dark:border-gray-700 mb-6"></div>
                 <div class="bg-gray-300 text-[#151515] dark:bg-gray-700 dark:text-gray-200 rounded-lg p-6 text-center shadow-md">
-                    <h2 class="text-2xl font-bold">No transactions yet</h2>
-                    <p class="text-[#151515] dark:text-gray-200 mt-2">All your transactions will be recorded here. You can start a new exchange now.</p>
-                    <button class="mt-4 bg-white text-black px-6 py-2 rounded shadow hover:bg-white-400">New Order</button>
+                  <h2 class="text-xl sm:text-2xl font-bold">No transactions yet</h2>
+                  <p class="mt-2">All your transactions will be recorded here. You can start a new exchange now.</p>
+                  <button class="mt-4 bg-white text-[#151515] px-6 py-2 rounded shadow hover:bg-gray-300 dark:hover:bg-gray-700">
+                    New Order
+                  </button>
                 </div>
-            </section>
+              </section>
 
               <!-- Footer -->
               <footer class="text-center mt-8">
-                <small class="text-[#151515] dark:text-gray-200">Pixxodex &copy; 2024</small>
+                <small class="text-gray-700 dark:text-gray-200">Pixxodex &copy; 2024</small>
               </footer>
             </div>
           </div>
         </main>
+
       </div>
     </div>
 
