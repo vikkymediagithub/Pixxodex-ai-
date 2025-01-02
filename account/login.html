@@ -1,214 +1,718 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login-Account</title>
+<html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link rel="shortcut icon" href="/mobile-dashboard/assets/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/mobile-dashboard/assets/css/tailwind.output.css" />
+    <link rel="stylesheet" href="/mobile-dashboard/assets/css/main.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
 
-    <!-- Add Bootstrap CSS (if not included already) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Add Bootstrap JS and required Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-    <style>
-        
-    .black_gradient_5 {
-        background: linear-gradient(85.17deg, #171717 -0.5%, #1f1f1f 98.72%);
-    }
-    </style>
-</head>
-<body>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="/mobile-dashboard/assets/js/init-alpine.js"></script>
+  </head>
+  <body>
     <!-- Loader -->
-    <div id="loader" class="loader-wrapper fixed inset-0 bg-black flex items-center justify-center z-50">
-        <div class="loader"></div> 
+    <div id="loader" class="fixed inset-0 bg-black flex items-center justify-center z-50">
+      <div class="loader"></div>
     </div>
 
-  <!-- Navbar -->
-  <nav class="sticky top-0 w-full z-10 bg-black shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <!-- Logo -->
-        <div class="flex items-center space-x-2">
-          <a href="../index.html">
-            <img src="../assets/logo.png" alt="Logo" class="h-12 w-30">
+    <div
+      class="flex h-screen bg-gray-50 dark:bg-gray-900"
+      :class="{ 'overflow-hidden': isSideMenuOpen }">
+      <!-- Desktop sidebar -->
+      <aside
+        class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0"
+      >
+        <div class="py-4 text-gray-500 dark:text-gray-400">
+          <a
+            class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
+            href="#"
+          >
+          <img src="/mobile-dashboard/assets/img/logo.png" alt="Logo" class="w-20 h-16 " />
+          </a>
+          <ul class="mt-6">
+            <li class="relative px-6 py-3">
+              <span
+                class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                aria-hidden="true"
+              ></span>
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                href="/mobile-dashboard/index.html"
+              >
+                <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                  ></path>
+                </svg>
+                <span class="ml-4">Dashboard</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li class="relative px-6 py-3">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="/mobile-dashboard/my-account.html"
+              >
+                <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                  ></path>
+                </svg>
+                <span class="ml-4">My Account</span>
+              </a>
+            </li>
+            <li class="relative px-6 py-3">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="cards.html"
+              >
+                <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  ></path>
+                </svg>
+                <span class="ml-4">Wallet</span>
+              </a>
+            </li>
+            <li class="relative px-6 py-3">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="charts.html"
+              >
+                <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
+                  ></path>
+                  <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                </svg>
+                <span class="ml-4">Withdraw</span>
+              </a>
+            </li>
+            <li class="relative px-6 py-3">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="buttons.html"
+              >
+                <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
+                  ></path>
+                </svg>
+                <span class="ml-4">Operations</span>
+              </a>
+            </li>
+            <li class="relative px-6 py-3">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="modals.html"
+              >
+                <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                <span class="ml-4">Trading Room</span>
+              </a>
+            </li>
+            <li class="relative px-6 py-3">
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="tables.html"
+              >
+                <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                </svg>
+                <span class="ml-4">Trasaction History</span>
+              </a>
+            </li>
+            <li class="relative px-6 py-3">
+              <button
+                class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                @click="togglePagesMenu"
+                aria-haspopup="true"
+              >
+                <span class="inline-flex items-center">
+                  <svg
+                    class="w-5 h-5"
+                    aria-hidden="true"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
+                    ></path>
+                  </svg>
+                  <span class="ml-4">Trading Room</span>
+                </span>
+                <svg
+                  class="w-4 h-4"
+                  aria-hidden="true"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+              <template x-if="isPagesMenuOpen">
+                <ul
+                  x-transition:enter="transition-all ease-in-out duration-300"
+                  x-transition:enter-start="opacity-25 max-h-0"
+                  x-transition:enter-end="opacity-100 max-h-xl"
+                  x-transition:leave="transition-all ease-in-out duration-300"
+                  x-transition:leave-start="opacity-100 max-h-xl"
+                  x-transition:leave-end="opacity-0 max-h-0"
+                  class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                  aria-label="submenu"
+                >
+                  <li
+                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                  >
+                    <a class="w-full" href="/mobile-dashboard/createTrade.html">Create Trade</a>
+                  </li>
+                  <li
+                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                  >
+                    <a class="w-full" href="pages/create-account.html">
+                      View Trade
+                    </a>
+                  </li>
+                  <li
+                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                  >
+                    <a class="w-full" href="pages/forgot-password.html">
+                      Join Trade
+                    </a>
+                  </li>
+                </ul>
+              </template>
+            </li>
+          </ul>
+        </div>
+      </aside>
+     
+      <div class="flex flex-col flex-1 w-full">
+        <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
+            <div class="container flex items-center justify-between h-full px-2 sm:px-4 mx-auto text-purple-600 dark:text-purple-300">
+              <!-- Left Side: Logo -->
+              <div class="flex items-center w-full justify-between md:w-auto">
+                <!-- Mobile View: Logo -->
+                <div class="flex items-center justify-center py-2 w-32 sm:w-36 md:w-40 lg:w-44 xl:w-48">
+                  <a href="/index.html">
+                    <img 
+                    src="/mobile-dashboard/assets/img/logo.png" 
+                    alt="Logo" 
+                    class="w-full h-auto object-contain"
+                  />
+                  </a>
+                </div>
+              </div>
+          
+              <!-- Right Side: Buttons, Dark Mode, Profile -->
+              <ul class="flex items-center flex-shrink-0 space-x-5">
+                <!-- Dark Mode Toggler -->
+                <li class="flex">
+                  <button
+                    class="w-10 h-10 flex items-center justify-center rounded-md focus:outline-none focus:shadow-outline-purple text-xl"
+                    @click="toggleTheme"
+                    aria-label="Toggle color mode"
+                  >
+                    <template x-if="!dark">
+                      <svg
+                        class="w-7 h-7 text-gray-800 dark:text-gray-200"
+                        aria-hidden="true"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                      </svg>
+                    </template>
+                    <template x-if="dark">
+                      <svg
+                        class="w-7 h-7 text-gray-800 dark:text-gray-200"
+                        aria-hidden="true"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </template>
+                  </button>
+                </li>
+          
+                <!-- Profile Menu -->
+                <li class="relative">
+                  <button
+                    class="w-10 h-10 flex items-center justify-center rounded-full focus:outline-none focus:shadow-outline-purple"
+                    @click="isProfileMenuOpen = !isProfileMenuOpen"
+                    aria-label="Account"
+                  >
+                    <img
+                      class="object-cover w-10 h-10 rounded-full"
+                      src="https://images.unsplash.com/photo-1502378735452-bc7d86632805?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=aa3a807e1bbdfd4364d1f449eaa96d82"
+                      alt="Profile Picture"
+                    />
+                  </button>
+                </li>
+          
+                <!-- Mobile Menu Button -->
+                <li class="md:hidden flex items-center">
+                  <button
+                    @click="isSideMenuOpen = !isSideMenuOpen"
+                    class="w-10 h-10 flex items-center justify-center p-2 rounded-md focus:outline-none focus:shadow-outline-purple"
+                    aria-label="Menu"
+                  >
+                    <svg
+                      class="w-6 h-6"
+                      aria-hidden="true"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </header>
+
+              <!-- Right Sliding Sidebar -->
+              <div
+              x-show="isSideMenuOpen"
+              x-transition:enter="transition-transform ease-in-out duration-300"
+              x-transition:enter-start="transform translate-x-full"
+              x-transition:enter-end="transform translate-x-0"
+              x-transition:leave="transition-transform ease-in-out duration-300"
+              x-transition:leave-start="transform translate-x-0"
+              x-transition:leave-end="transform translate-x-full"
+              class="fixed inset-0 z-40"
+              @click="toggleSideMenu"
+            >
+            <!-- Sidebar Content -->
+            <div
+      class="fixed top-0 right-0 w-full bg-white dark:bg-gray-800 h-full shadow-lg z-40"
+      @click.stop
+    >
+      <div class="flex items-center justify-between px-4 py-4 border-b dark:border-gray-700">
+        <!-- Logo: Adjust size for mobile -->
+        <div class="flex items-center justify-center py-2 w-32 sm:w-36 md:w-40 lg:w-44 xl:w-48">
+          <a href="/index.html">
+            <img
+            src="/mobile-dashboard/assets/img/logo.png"
+            alt="Logo"
+            class="w-full h-auto object-contain"
+          />
           </a>
         </div>
-
-        <!-- Desktop Links -->
-        <div class="hidden md:flex items-center space-x-8">
-          <!-- Dark Mode Theme Icon (Crescent Moon) -->
-          <button class="text-white hover:text-gray-300">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
-              <path d="M7.08 11.25A4.84 4.84 0 0 1 8 9.05L4.43 5.49A9.88 9.88 0 0 0 2 11.25zM9.05 8a4.84 4.84 0 0 1 2.2-.91V2a9.88 9.88 0 0 0-5.76 2.43zm3.7-6v5A4.84 4.84 0 0 1 15 8l3.56-3.56A9.88 9.88 0 0 0 12.75 2zM8 15a4.84 4.84 0 0 1-.91-2.2H2a9.88 9.88 0 0 0 2.39 5.76zm3.25 1.92a4.84 4.84 0 0 1-2.2-.92l-3.56 3.57A9.88 9.88 0 0 0 11.25 22zM16 9.05a4.84 4.84 0 0 1 .91 2.2h5a9.88 9.88 0 0 0-2.39-5.76zM15 16a4.84 4.84 0 0 1-2.2.91v5a9.88 9.88 0 0 0 5.76-2.39zm1.92-3.25A4.84 4.84 0 0 1 16 15l3.56 3.56A9.88 9.88 0 0 0 22 12.75z"></path>
-            </svg>
-          </button>
-
-          <!-- Help Icon (Link to Help Page) -->
-          <a href="../contact-us/contact-us.html" class="text-white hover:text-gray-300">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
-              <path d="M12 6a3.939 3.939 0 0 0-3.934 3.934h2C10.066 8.867 10.934 8 12 8s1.934.867 1.934 1.934c0 .598-.481 1.032-1.216 1.626a9.208 9.208 0 0 0-.691.599c-.998.997-1.027 2.056-1.027 2.174V15h2l-.001-.633c.001-.016.033-.386.441-.793.15-.15.339-.3.535-.458.779-.631 1.958-1.584 1.958-3.182A3.937 3.937 0 0 0 12 6zm-1 10h2v2h-2z"></path>
-              <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path>
-            </svg>
-          </a>
-
-          <!-- Login Button -->
-          <button class="text-sm px-4 py-2 black_gradient_5 text-white rounded-lg hover:bg-gray-700 transition">
-            <a href="../account/login.html">Login</a>
-          </button>
-        </div>
-
-        <!-- Mobile Menu Trigger -->
-        <div class="md:hidden flex items-center space-x-4">
-          <!-- Dark Mode Theme Icon (Crescent Moon) -->
-          <button class="text-white hover:text-gray-300">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
-              <path d="M7.08 11.25A4.84 4.84 0 0 1 8 9.05L4.43 5.49A9.88 9.88 0 0 0 2 11.25zM9.05 8a4.84 4.84 0 0 1 2.2-.91V2a9.88 9.88 0 0 0-5.76 2.43zm3.7-6v5A4.84 4.84 0 0 1 15 8l3.56-3.56A9.88 9.88 0 0 0 12.75 2zM8 15a4.84 4.84 0 0 1-.91-2.2H2a9.88 9.88 0 0 0 2.39 5.76zm3.25 1.92a4.84 4.84 0 0 1-2.2-.92l-3.56 3.57A9.88 9.88 0 0 0 11.25 22zM16 9.05a4.84 4.84 0 0 1 .91 2.2h5a9.88 9.88 0 0 0-2.39-5.76zM15 16a4.84 4.84 0 0 1-2.2.91v5a9.88 9.88 0 0 0 5.76-2.39zm1.92-3.25A4.84 4.84 0 0 1 16 15l3.56 3.56A9.88 9.88 0 0 0 22 12.75z"></path>
-            </svg>
-          </button>
-
-          <!-- Hamburger Icon for Mobile -->
-          <button id="hamburger" class="focus:outline-none">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
-        </div>
+        
+        <!-- Close Button -->
+        <button
+          class="text-gray-800 dark:text-gray-200"
+          @click="toggleSideMenu"
+          aria-label="Close Menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
       </div>
-    </div>
-  </nav>
+                <ul class="mt-6 space-y-4 px-4">
+                  <!-- Dashboard -->
+                  <li class="flex items-center space-x-2">
+                    <svg
+                      class="w-5 h-5 text-gray-800 dark:text-gray-200"
+                      aria-hidden="true"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                      ></path>
+                    </svg>
+                    <a href="#" class="text-lg text-gray-800 dark:text-gray-200">Dashboard</a>
+                  </li>
+    
+                  <!-- My Account -->
+                  <li class="flex items-center space-x-2  text-gray-800 dark:text-gray-200">
+                    <svg
+                      class="w-5 h-5"
+                      aria-hidden="true"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                      ></path>
+                    </svg>
+                    <a href="/mobile-dashboard/my-account.html" class="text-lg">My Account</a>
+                  </li>
+    
+                  <!-- My Wallet -->
+                  <li class="flex items-center space-x-2  text-gray-800 dark:text-gray-200">
+                    <svg
+                    class="w-5 h-5"
+                    aria-hidden="true"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      d="M3 7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"
+                    ></path>
+                    <path
+                      d="M16 12a2 2 0 100 4 2 2 0 000-4z"
+                    ></path>
+                  </svg>
+                  
+                    <a href="/mobile-dashboard/my-wallet.html" class="text-lg">My Wallet</a>
+                  </li>
+    
+                  <!-- Trading Room (Dropdown) -->
+                  <li class="relative">
+                    <button
+                      class="flex items-center justify-between w-full text-lg transition-colors duration-150 text-gray-800 dark:text-gray-200"
+                      @click="togglePagesMenu"
+                      aria-haspopup="true"
+                    >
+                      <span class="inline-flex items-center">
+                        <svg
+                          class="w-5 h-5"
+                          aria-hidden="true"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
+                          ></path>
+                        </svg>
+                        <span class="ml-4">Trading Room</span>
+                      </span>
+                      <svg
+                        class="w-4 h-4"
+                        aria-hidden="true"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </button>
+                    <template x-if="isPagesMenuOpen">
+                      <ul
+                        x-transition:enter="transition-all ease-in-out duration-300"
+                        x-transition:enter-start="opacity-25 max-h-0"
+                        x-transition:enter-end="opacity-100 max-h-xl"
+                        x-transition:leave="transition-all ease-in-out duration-300"
+                        x-transition:leave-start="opacity-100 max-h-xl"
+                        x-transition:leave-end="opacity-0 max-h-0"
+                        class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                        aria-label="submenu"
+                      >
+                        <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                          <a href="/mobile-dashboard/createTrade.html">Create Trade</a>
+                        </li>
+                        <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                          <a href="/mobile-dashboard/viewTrade.html">View Trade</a>
+                        </li>
+                        <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                          <a href="/mobile-dashboard/joinTrade.html">Join Trade</a>
+                        </li>
+                      </ul>
+                    </template>
+                  </li>
+    
+                  <!-- Withdraw -->
+                  <li class="flex items-center space-x-2  text-gray-800 dark:text-gray-200">
+                    <svg
+                    class="w-5 h-5"
+                    aria-hidden="true"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
+                    ></path>
+                    <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                  </svg>
+                    <a href="/mobile-dashboard/withdrawal.html" class="text-lg">Withdraw</a>
+                  </li>
+    
+                  <!-- Transaction History (Dropdown) -->
+                  <li class="relative">
+                    <button
+                      class="flex items-center justify-between w-full text-lg transition-colors duration-150 text-gray-800 dark:text-gray-200"
+                      @click="togglePagesMenu"
+                      aria-haspopup="true"
+                    >
+                      <span class="inline-flex items-center">
+                        <svg
+                        class="w-5 h-5"
+                        aria-hidden="true"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                      </svg>
+                        <span class="ml-4">Transaction History</span>
+                      </span>
+                      <svg
+                        class="w-4 h-4"
+                        aria-hidden="true"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </button>
+                    <template x-if="isPagesMenuOpen">
+                      <ul
+                        x-transition:enter="transition-all ease-in-out duration-300"
+                        x-transition:enter-start="opacity-25 max-h-0"
+                        x-transition:enter-end="opacity-100 max-h-xl"
+                        x-transition:leave="transition-all ease-in-out duration-300"
+                        x-transition:leave-start="opacity-100 max-h-xl"
+                        x-transition:leave-end="opacity-0 max-h-0"
+                        class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                        aria-label="submenu"
+                      >
+                        <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                          <a href="pages/login.html">Deposit History</a>
+                        </li>
+                        <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                          <a href="pages/create-account.html">Withdrawal History</a>
+                        </li>
+                      </ul>
+                    </template>
+                  </li>
+                </ul>
+    
+                <hr class="my-6 border-gray-700" />
+    
+                <!-- Logout -->
+                <ul class="px-4">
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-5 h-5 text-gray-800 dark:text-gray-200" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        fill-rule="evenodd"
+                        d="M13 3H6a2 2 0 00-2 2v14a2 2 0 002 2h7a2 2 0 002-2V5a2 2 0 00-2-2zm-1 14H7V7h5v10zM15 10l4-4m0 0l4 4m-4-4v12"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+    
+                    <a href="#" class="text-lg text-gray-800 dark:text-gray-200">Logout</a>
+                  </li>
+                </ul>
+            </div>
+            </div>
 
-  <!-- Sliding Mobile Dropdown Menu -->
-  <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-3/4 bg-black shadow-lg z-20 transform translate-x-full transition-transform duration-300">
-    <div class="flex items-center justify-between px-6 py-4 border-b border-gray-700">
-      <!-- Logo on the left -->
-      <div class="flex items-center space-x-2">
-        <a href="/index.html"><img src="../assets/logo.png" alt="Logo" class="h-8 w-8"></a>
+        <!-- main -->
+        <main class="h-full overflow-y-auto">
+            <!-- Login Section -->
+    <div class="flex flex-col">
+       <!-- Content Wrapper -->
+<div class="flex flex-col items-center justify-center flex-grow w-full max-w-lg mx-auto shadow-2xl rounded-2xl m-4 md:m-8">
+  <!-- Form Section -->
+  <div class="flex flex-col justify-center p-6 md:p-10 w-full">
+      <h1 class="mb-4 text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-700 dark:text-gray-200">Welcome Back</h1>
+      <p class="font-light bg-gray-100 text-[#151515] dark:bg-gray-700 dark:text-gray-200 px-4 py-3 rounded-lg shadow-md text-sm sm:text-base md:text-lg mb-6 text-center">
+          Provide your credentials to continue
+      </p>
+
+      <!-- Email Input -->
+      <div class="py-4">
+          <label for="email" class="mb-2 text-sm sm:text-base md:text-lg block text-gray-700 dark:text-gray-200">Email</label>
+          <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              class="w-full p-3 border rounded-md placeholder:font-light bg-gray-500 text-[#000] dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 text-sm sm:text-base"
+          />
       </div>
-      <!-- Close button on the right -->
-      <button id="closeMenu" class="text-white text-2xl hover:text-gray-400 focus:outline-none">
-        &times;
-      </button>
-    </div>
 
-    <!-- Navigation Links -->
-    <div class="p-6 text-white">
-      <a href="../about/about.html" class="block px-4 py-2 hover:black_gradient_5">About</a>
-      <a href="../contact-us/contact-us.html" class="block px-4 py-2 hover:black_gradient_5">Help</a>
-      <a href="../terms/terms.html" class="block px-4 py-2 hover:black_gradient_5">Terms of Use</a>
-      <a href="../policy/policy.html" class="block px-4 py-2 hover:black_gradient_5">Privacy Policy</a>
-    </div>
+      <!-- Password Input -->
+      <div class="py-4">
+          <label for="password" class="mb-2 text-sm sm:text-base md:text-lg block text-gray-700 dark:text-gray-200">Password</label>
+          <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              class="w-full p-3 border rounded-md placeholder:font-light bg-gray-500 text-[#000] dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 text-sm sm:text-base"
+          />
+      </div>
 
-    <!-- Login Section at the Bottom -->
-    <div class="p-6 mt-32 text-white rounded-t-lg">
-      <p class="text-sm text-white">Already have an account?</p>
-      <button class="block w-full text-sm px-4 py-2 bg-[#27B763] text-white rounded-lg hover:bg-[#3DD37C] transition">
-        <a href="../account/login.html">Login</a>
-      </button>
-    </div>
+      <!-- Login Button -->
+      <a href="/mobile-dashboard/index.html" class="block">
+          <button
+              type="submit"
+              class="w-full bg-green-500 text-white p-3 rounded-lg mb-6 hover:bg-green-600 focus:outline-none transition duration-200 text-sm sm:text-base"
+          >
+              Login
+          </button>
+      </a>
+
+      <!-- Create Account Link -->
+      <div class="text-center text-gray-600 dark:text-gray-800">
+          Don't have an account?
+          <a href="../account/" class="font-bold text-gray-400 dark:text-gray-800">Create an account</a>
+      </div>
+
+      <!-- Forgot Password Link -->
+      <a href="./acct-recovery.html" class="text-sm sm:text-base md:text-lg text-center text-green-400 hover:text-green-500 hover:underline block">
+          Forgot password?
+      </a>
   </div>
 
-  <script>
-    // Toggle Mobile Menu
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.getElementById('mobileMenu').classList.toggle('translate-x-full');
-    });
-
-    // Close Mobile Menu
-    document.getElementById('closeMenu').addEventListener('click', () => {
-      document.getElementById('mobileMenu').classList.add('translate-x-full');
-    });
-  </script>
-
-
-
-    <!-- Login Section -->
-    <div class="flex flex-col min-h-screen bg-[#0A0707] text-white">
-        <!-- Content Wrapper -->
-        <div class="flex flex-col items-center justify-center flex-grow w-full max-w-lg mx-auto shadow-2xl rounded-2xl m-4 md:m-8">
-        <!-- Form Section -->
-        <div class="flex flex-col justify-center p-6 md:p-10 w-full">
-            <h1 class="mb-4 text-2xl md:text-4xl font-bold text-center">Welcome Back</h1>
-            <p class="font-light bg-[#454545] px-4 py-3 rounded-lg shadow-md text-sm md:text-lg mb-6 text-center">
-            Provide your credentials to continue
-            </p>
-    
-            <!-- Email Input -->
-            <div class="py-4">
-            <label for="email" class="mb-2 text-sm md:text-lg block">Email</label>
-            <input
-                type="text"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                class="w-full p-3 border border-gray-500 rounded-md placeholder:font-light placeholder:text-gray-400 text-white bg-[#2d2a29] focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300"
-            />
-            </div>
-    
-            <!-- Password Input -->
-            <div class="py-4">
-            <label for="password" class="mb-2 text-sm md:text-lg block">Password</label>
-            <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Enter your password"
-                class="w-full p-3 border border-gray-500 rounded-md placeholder:font-light placeholder:text-gray-400 text-white bg-[#2d2a29] focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300"
-            />
-            </div>
-    
-            <!-- Login Button -->
-            <a href="/mobile-dashboard/index.html" class="block">
-            <button
-                type="submit"
-                class="w-full bg-green-500 text-white p-3 rounded-lg mb-6 hover:bg-green-600 focus:outline-none transition duration-200"
-            >
-                Login
-            </button>
-            </a>
-
-              <!-- Create Account Link -->
-              <div class="text-center text-gray-400">
-                Don't have an account?
-                <a href="../account/" class="font-bold text-white hover:underline">Create an account</a>
-              </div>
-    
-            <!-- Forgot Password Link -->
-            <a href="./acct-recovery.html" class="text-sm md:text-lg text-center text-green-400 hover:text-green-500 hover:underline block">
-            Forgot password?
-            </a>
-        </div>
-        </div>
-    
-       <!-- Footer Text at the bottom -->
-        <footer class="text-center text-white text-xs sm:text-sm md:text-base px-4 py-4 bg-[#0A0707]">
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-xs sm:text-sm md:text-base">
+  <!-- Footer Text at the bottom -->
+  <footer class="text-center text-gray-700 dark:text-gray-200 text-xs sm:text-sm md:text-base px-4 py-4">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p class="text-xs sm:text-sm md:text-base">
               All or part of the Pixxodex services, some features thereof, or some Digital Assets, are not available in certain jurisdictions, including where restrictions or limitations may apply, as indicated on the Platform and in the relevant general terms and conditions.
               <br />
               Pixxodex © 2024
-            </p>
-          </div>
-        </footer>
-    </div>
-    
-    <!-- CSS -->
-    <style>
-        html, body {
-        height: 100%;
-        margin: 0;
-        }
-    </style>
-  
-  
+          </p>
+      </div>
+  </footer>
+</div>
 
-   <script src="../js/main.js"></script>
-</body>
+    
+      
+    </div>
+        </main>
+  
+  
+        
+      </div>
+    </div>
+
+    <!-- script -->
+     <script src="/mobile-dashboard/assets/js/script.js"></script>
+
+  </body>
 </html>
