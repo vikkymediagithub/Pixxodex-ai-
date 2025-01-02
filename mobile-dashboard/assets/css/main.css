@@ -147,3 +147,52 @@
     .dark .hover\:text-blue-700:hover {
       color: #1e3a8a;
     }
+
+
+
+    /* header media query */
+    @media screen and (max-width: 400px) {
+      /* Adjust icon sizes for small screens */
+      .header-icon {
+        width: 1.5rem; /* Increase size for better visibility */
+        height: 1.5rem;
+      }
+  
+      .profile-img {
+        width: 2rem; /* Increase profile picture size */
+        height: 2rem;
+      }
+  
+      .menu-button {
+        width: 2rem; /* Adjust menu button size */
+        height: 2rem;
+      }
+  
+      /* Adjust logo size for small screens */
+      .header-logo {
+        width: 4rem; /* Reduce size slightly for mobile */
+        height: auto;
+      }
+    }
+  
+    @media screen and (max-width: 250px) {
+      /* Further adjustments for the smallest screens */
+      .header-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+  
+      .profile-img {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+  
+      .menu-button {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+  
+      .header-logo {
+        width: 3.5rem;
+      }
+    }
