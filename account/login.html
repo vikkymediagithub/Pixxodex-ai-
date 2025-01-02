@@ -321,9 +321,9 @@
                 </li>
           
                 <!-- Profile Menu -->
-                <li class="relative">
+                <li class="relative" x-data="{ isProfileMenuOpen: false }">
                   <button
-                    class="w-10 h-10 flex items-center justify-center rounded-full focus:outline-none focus:shadow-outline-purple"
+                    class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
                     @click="isProfileMenuOpen = !isProfileMenuOpen"
                     aria-label="Account"
                   >
@@ -333,6 +333,78 @@
                       alt="Profile Picture"
                     />
                   </button>
+                  <div
+                    x-show="isProfileMenuOpen"
+                    @click.away="isProfileMenuOpen = false"
+                    x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 transform -translate-y-4"
+                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                    x-transition:leave="transition ease-in duration-150"
+                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                    x-transition:leave-end="opacity-0 transform -translate-y-4"
+                    class="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg dark:bg-gray-700"
+                  >
+                    <a
+                      href="#"
+                      class="flex items-center px-4 py-3 text-lg font-semibold text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    >
+                      <svg
+                        class="w-6 h-6 mr-3"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M5.121 17.804A1 1 0 014 17V7a1 1 0 011.707-.707l6.085 6.085a1 1 0 001.414 0l6.085-6.085A1 1 0 0120 7v10a1 1 0 01-1.707.707l-6.085-6.085a1 1 0 00-1.414 0L5.707 17.804z"
+                        />
+                      </svg>
+                      Account Settings
+                    </a>
+                    <a
+                      href="#"
+                      class="flex items-center px-4 py-3 text-lg font-semibold text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    >
+                      <svg
+                        class="w-6 h-6 mr-3"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M8 16l4-4-4-4m8 8l-4-4 4-4"
+                        />
+                      </svg>
+                      Activity History
+                    </a>
+                    <a
+                      href="#"
+                      class="flex items-center px-4 py-3 text-lg font-semibold text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    >
+                      <svg
+                        class="w-6 h-6 mr-3"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M17 16l-4-4m0 0l-4-4m4 4h12"
+                        />
+                      </svg>
+                      Sign Out
+                    </a>
+                  </div>
                 </li>
           
                 <!-- Mobile Menu Button -->
@@ -428,7 +500,7 @@
                         d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                       ></path>
                     </svg>
-                    <a href="#" class="text-lg text-gray-800 dark:text-gray-200">Dashboard</a>
+                    <a href="/mobile-dashboard/index.html" class="text-lg text-gray-800 dark:text-gray-200">Dashboard</a>
                   </li>
     
                   <!-- My Account -->
