@@ -128,25 +128,7 @@
       font-size: 1.25rem; /* Adjust heading font size */
     }
   
-    /* Dark mode adjustments */
-    .dark .text-gray-800 {
-      color: #e5e5e5;
-    }
-    .dark .text-gray-700 {
-      color: #cccccc;
-    }
-    .dark .bg-gray-50 {
-      background-color: #2d2d2d;
-    }
-    .dark .bg-gray-100 {
-      background-color: #333;
-    }
-    .dark .bg-gray-700 {
-      background-color: #444;
-    }
-    .dark .hover\:text-blue-700:hover {
-      color: #1e3a8a;
-    }
+
 
 
 
@@ -196,3 +178,7 @@
         width: 3.5rem;
       }
     }
+
+
+
+    
