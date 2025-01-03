@@ -1,3 +1,7 @@
+tailwind.config = {
+  darkMode: 'class'  // Forces dark mode toggle to use the 'class' method
+}
+
 // Show loader until the page is fully loaded
 window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
